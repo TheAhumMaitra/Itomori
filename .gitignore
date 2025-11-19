@@ -12,3 +12,7 @@ wheels/
 .env/*
 # Virtual environments
 .venv
+
+# Notes.txt file
+src/notes.txt
+./src/notes.txt

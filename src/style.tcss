@@ -1,0 +1,40 @@
+#WelText{
+    width: 100%;
+    color: yellow;
+    height: 3;
+    padding: 1 2;
+    margin: 2;
+    align: center middle;
+    text-align: center;
+}
+#WhereSavedNotesWarn{
+     width: 100%;
+    color: green;
+    height: 3;
+    padding: 1 2;
+    margin: 2;
+    align: center middle;
+    text-align: center;
+}
+#LogoText{
+    width: 100%;
+    color: purple;
+    height: 30%;
+    align: center middle;
+    margin: 2;
+    text-align: center;
+}
+
+HelpScreen {
+    align: center middle;
+}
+
+#VersionScreen {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 80%;
+    background: $panel;
+    border: solid $accent;
+    align: center middle;
+}

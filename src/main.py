@@ -2,22 +2,22 @@
 Main python file to render Itomori
 """
 
-# import all nesseary libaries or modules
+# import all necessary libraries or modules
 
-# Textual nesseary imports
+# Textual necessary imports
 from textual.app import App, ComposeResult
 
-# import nesseary textual widgets
+# import necessary textual widgets
 from textual.widgets import Header, Footer, Input
 
 # import containers for textual app
 from textual.containers import ScrollableContainer
 
-# import other modules or libaries
-import uuid  # to genrate id
+# import other modules or libraries
+import uuid  # to generate id
 import json  # to add notes and view notes
 from datetime import datetime  # to get current time and date
-from textual import on  # to intereact with user
+from textual import on  # to interact with user
 
 # All components
 from components.WelcomeTextRender import WelcomeText
@@ -51,7 +51,7 @@ class Itomori(App):
         """
         This is the main method. This method is to compose Itomori
         """
-        yield Header(show_clock=True)  # show the Header with a liitle clcok
+        yield Header(show_clock=True)  # show the Header with a little clock
 
         # scrollable container to show all components
         yield ScrollableContainer(
@@ -60,25 +60,25 @@ class Itomori(App):
 
         yield Footer()  # show footer
 
-    # if any input submiited
-    @on(Input.Submitted, "#NoteInputBox")  # anything sumbitted via note input
+    # if any input submitted
+    @on(Input.Submitted, "#NoteInputBox")  # anything submitted via note input field
     def handle_tasks(self) -> None:
         """
-        This function helps us to recive user's typed input and store them in a json file (notes.json). This json file can keep append every time.
+        This function helps us to receive user's typed input and store them in a json file (notes.json). This json file can keep append every time.
         """
         user_typed_input = self.query_one("#NoteInputBox")  # get user input
         self.user_note = (
             user_typed_input.value.strip()
         )  # get the real value form 'user_typed_input'
 
-        note = self.user_note  # make the note avaliable all over the class
+        note = self.user_note  # make the note available all over the class
 
         # get a beautiful date and time to store in the json file
         date_and_time = (
             datetime.now().astimezone().strftime("%A, %d %B %Y - %I:%M %p (%Z)")
         )
 
-        # notes dictionary to store and orgainze random note id, note and time and date for that
+        # notes dictionary to store and organize random note id, note and time and date for that
         notes = {
             "ID": str(uuid.uuid4()),
             "Time": date_and_time,
@@ -91,19 +91,19 @@ class Itomori(App):
 
     def action_show_ver(self) -> None:
         """
-        This method help us, if user pressed 'v' key in thir keyboard then it help us to show the Version component (screen).
+        This method help us, if user pressed 'v' key in their keyboard then it help us to show the Version component (screen).
         """
-        self.push_screen(VersionScreen())  # psuh the modal screen
+        self.push_screen(VersionScreen())  # push the modal screen
 
     def action_show_row_notes(self) -> None:
         """
-        This method help us, if user pressed 'n' key in thir keyboard then it help us to show the all saved notes, raw json file.
+        This method help us, if user pressed 'n' key in their keyboard then it help us to show the all saved notes, raw json file.
         """
-        self.push_screen(RawNotes())  # psuh the screen
+        self.push_screen(RawNotes())  # push the screen
 
     def on_mount(self) -> None:
         """
-        This method helps us to when the app run succesfully it quicly run these settings or tweaks
+        This method helps us to when the app run successfully it quickly run these settings or tweaks
         """
         # Set the Itomori's default theme
         self.theme: theme = "catppuccin-mocha"

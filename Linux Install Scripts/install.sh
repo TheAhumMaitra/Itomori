@@ -2,6 +2,8 @@
 
 echo "🚀 Welcome to the Itomori Installation Script!"
 echo ""
+echo "Author : Ahum Maitra"
+echo ""
 
 # Detect home directory
 USER_HOME="$HOME"

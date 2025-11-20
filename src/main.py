@@ -56,6 +56,10 @@ class Itomori(App):
     def action_show_row_notes(self) -> None:
         self.push_screen(RawNotes())
 
+    def on_mount(self) -> None:
+        # Set the Itomori's default theme
+        self.theme = "catppuccin-mocha"
+
 
 if __name__ == "__main__":
     app = Itomori()

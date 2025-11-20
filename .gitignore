@@ -13,6 +13,8 @@ wheels/
 # Virtual environments
 .venv
 
-# Notes.txt file
-src/notes.txt
-
+# Notes.json file
+src/notes.json
+src/notes.jsonl
+notes.json
+notes.jsonl

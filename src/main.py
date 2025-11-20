@@ -29,12 +29,14 @@ class Itomori(App):
         user_typed_input = self.query_one("#NoteInputBox")
         self.user_note = user_typed_input.value.strip()
         note = self.user_note
+        date_and_time = (
+            datetime.now().astimezone().strftime("%A, %d %B %Y - %I:%M %p (%Z)")
+        )
         notes = {
             "ID": str(uuid.uuid4()),
-            "Time": datetime.now().isoformat(),
+            "Time": date_and_time,
             "Task Text": note,
         }
-
         # Write note to file
         with open("notes.json", "a") as notesfile:
             notesfile.write(json.dumps(notes) + "\n")

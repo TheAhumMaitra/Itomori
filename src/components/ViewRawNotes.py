@@ -14,7 +14,10 @@ class RawNotes(ModalScreen[None]):
 
             yield Label("[b yellow]Press ESC to exit this screen[/b yellow]\n\n\n\n")
             yield Label("[b yellow underline]ALL NOTES : [/b yellow underline]\n\n\n\n")
-            yield Label(f"[b pink]{all_notes}[/b pink]")
+            if str(all_notes) == "":
+                yield Label("[b blue]Nothing in here![/b blue]")
+            else:
+                yield Label(f"[b pink]{all_notes}[/b pink]")
 
     def action_pop_screen(self):
         self.dismiss()

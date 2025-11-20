@@ -40,7 +40,7 @@ class Itomori(App):
             notesfile.write(json.dumps(notes) + "\n")
 
     def compose(self) -> ComposeResult:
-        yield Header()
+        yield Header(show_clock=True)
 
         yield ScrollableContainer(
             LogoRender, WelcomeText, WhereSavedWarn, UserNoteInputBox

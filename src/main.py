@@ -6,14 +6,14 @@ import json
 from datetime import datetime
 
 # All components
-from WelcomeTextRender import WelcomeText
-from AddNoteInputBox import UserNoteInputBox
+from components.WelcomeTextRender import WelcomeText
+from components.AddNoteInputBox import UserNoteInputBox
 from textual import on
 from datetime import datetime as time
-from InfoWhereSaved import WhereSavedWarn
-from LogoText import LogoRender
-from VersionScreen import VersionScreen
-from ViewRawNotes import RawNotes
+from components.InfoWhereSaved import WhereSavedWarn
+from components.LogoText import LogoRender
+from components.VersionScreen import VersionScreen
+from components.ViewRawNotes import RawNotes
 
 
 class Itomori(App):
@@ -28,10 +28,11 @@ class Itomori(App):
     def handle_tasks(self) -> None:
         user_typed_input = self.query_one("#NoteInputBox")
         self.user_note = user_typed_input.value.strip()
+        note = self.user_note
         notes = {
             "ID": str(uuid.uuid4()),
             "Time": datetime.now().isoformat(),
-            "Task Text": self.user_note,
+            "Task Text": note,
         }
 
         # Write note to file

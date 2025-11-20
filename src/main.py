@@ -117,5 +117,5 @@ if __name__ == "__main__":
     # if any critical error stops us to run the app or anything wrong
     except Exception as Error:
         raise Exception(
-            f"Sorry! Something went wrong, it is too critical. Raw error - {Error}"
+            f"Sorry! Something went wrong, it is too critical. Raw error - {Error}" #give user a friendly messege and also give user user what goes wrong
         )

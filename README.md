@@ -14,54 +14,9 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 # 🛠️ Installation
 
-Installing Itomori on Linux is simple. Just follow the steps below.
+## Linux
 
-## Prerequisites
-
-Make sure you have the following installed:
-```
-Git
-
-Python 3.14 (or newer)
-
-Textual 6.6.0 (or newer)
-```
-
-## 📦 Clone the Repository
-
-```
-git clone https://github.com/TheAhumMaitra/Itomori
-```
-
-## 📁 Go to the Project Folder
-
-After cloning, enter the directory:
-
-```
-cd Itomori
-```
-## 🧪 Create a Virtual Environment
-
-Run the following command:
-```
-python3 -m venv .venv
-```
-### Then activate it:
-```
-source .venv/bin/activate
-```
-## 📥 Install Dependencies
-```
-pip install -r requirements.txt
-```
-# ▶️ Run Itomori
-```
-python3 main.py
-```
-
-# 🖥️ Desktop Shortcut (Linux)
-
-You can easily create a desktop launcher to open Itomori like a regular app. (Instructions coming soon!)
+To install 'Itomori' simply run the [`install.sh`](install.sh) file , which simply helps to install this application and also creates a desktop shortcut.
 
 # 💬 Contribute
 

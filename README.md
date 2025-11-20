@@ -10,7 +10,9 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 3. Lightweight and fast
 
-4. Easy to install on Linux
+4. Stores note simply in json format
+
+5. Easy for quick notes
 
 # 🛠️ Installation
 

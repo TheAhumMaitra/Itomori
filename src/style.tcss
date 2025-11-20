@@ -35,6 +35,6 @@ HelpScreen {
     height: auto;
     max-height: 80%;
     background: $panel;
-    border: solid $accent;
+    border: solid $primary;
     align: center middle;
 }

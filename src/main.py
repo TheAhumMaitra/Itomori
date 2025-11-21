@@ -74,8 +74,8 @@ class Itomori(App):
         """
         This function helps us to receive user's typed input and store them in a json file (notes.json). This json file can keep append every time.
         """
-        logger.info("User requested to add a note")
 
+        db = TinyDB("notes.json")
         user_typed_input = self.query_one("#NoteInputBox")  # get user input
         self.user_note = (
             user_typed_input.value.strip()
@@ -87,31 +87,19 @@ class Itomori(App):
         date_and_time = (
             datetime.now().astimezone().strftime("%A, %d %B %Y - %I:%M %p (%Z)")
         )
-        # Write the user's note to the 'notes.json' file
-        try:
-            #id for the note
-            id = str(uuid.uuid4())
-            # Logic for writing the note
-            db = TinyDB("notes.json")
-            db.insert({"id": id, "note": note, "time": date_and_time})
 
-            logger.info(f"Note successfully wrote with ID: {id}")
-
-        except FileNotFoundError as FileError:
-            logger.error("notes.json file not found")
-            yield Label(
-                f"[b red]File not found, ERROR={FileError}! The app will close in 5 seconds[/b red]"
-            )
-            time.sleep(5)
-            raise FileNotFoundError("THe 'notes.json' file is not here!")
-
-        except Exception as UnexpectedError:
-            logger.error(f"Unexpected error happend. Error = {UnexpectedError}")
-            yield Label(
-                f"[b red]Unexpected error - {UnexpectedError}! The app will close in 5 seconds[/b red]"
-            )
-            time.sleep(5)
-            raise Exception(f"Something is wrong! Unexpected error - {UnexpectedError}")
+        # notes dictionary to store and organize random note id, note and time and date for that
+        notes = {
+            "ID": str(uuid.uuid4()),
+            "Time": date_and_time,
+            "Task Text": note,
+        }
+        id = str(uuid.uuid4())
+        # # Write the user's note to file
+        # with open("notes.json", "a") as notesfile:
+        #     notesfile.write(json.dumps(notes) + ",\n")
+        #
+        db.insert({"ID": id, "Note": note, "Time": date_and_time})
 
     def action_show_ver(self) -> None:
         """

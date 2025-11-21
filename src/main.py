@@ -14,7 +14,7 @@ from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer, Input, Label
 
 # import containers for textual app
-from textual.containers import ScrollableContainer
+from textual.containers import Container, ScrollableContainer
 
 
 # import pyjoke to tell user a joke
@@ -108,6 +108,9 @@ class Itomori(App):
         logger.info("User requested for exit the Version modal screen")
 
         self.push_screen(VersionScreen())  # push the modal screen
+
+    class ViewNote:
+        Container(RawNotes())
 
     def action_show_row_notes(self) -> None:
         """

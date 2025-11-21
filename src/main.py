@@ -130,7 +130,7 @@ class Itomori(App):
         self.call_from_thread(self.joke_label.update, f"[b grey]{joke}[/b grey]")
 
         # schedule next joke
-        threading.Timer(7, self.update_joke).start()
+        threading.Timer(10, self.update_joke).start()
 
     def on_mount(self) -> None:
         """
@@ -140,7 +140,7 @@ class Itomori(App):
         # Set the Itomori's default theme
         self.theme: theme = "catppuccin-mocha"
 
-        threading.Timer(7, self.update_joke).start()
+        threading.Timer(10, self.update_joke).start()
 
 
 # if the file run directly

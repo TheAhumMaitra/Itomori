@@ -26,6 +26,7 @@ import uuid  # to generate id
 import arrow  # to get current time and date
 from textual import on  # to interact with user
 
+
 # All components
 from components.WelcomeTextRender import WelcomeText
 from components.AddNoteInputBox import UserNoteInputBox

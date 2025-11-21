@@ -3,9 +3,14 @@ import time
 from textual.screen import ModalScreen
 from textual.app import ComposeResult
 from textual.widgets import Label
-from textual.containers import Container
+from textual.containers import ScrollableContainer
 from tinydb import TinyDB
-from tabulate import tabulate
+from textual.widgets import Static
+from rich.table import Table
+
+# To view the table
+from rich.console import Console
+from rich import box
 
 
 class RawNotes(ModalScreen[None]):
@@ -22,10 +27,22 @@ class RawNotes(ModalScreen[None]):
         """
 
         # read the json file
-        with Container(id="ViewRawNotesScreen"):
+        with ScrollableContainer(id="ViewRawNotesScreen"):
             try:
                 Database = TinyDB("./notes.json")
-                all_notes = tabulate(Database.all(), headers="keys", tablefmt="grid")
+
+                all_notes = Table(
+                    title="All Notes",
+                    box=box.SQUARE,  # ← adds a border all around
+                    border_style="cyan",  # border color
+                    show_lines=True,  # optional: lines between rows
+                )
+
+                all_notes.add_column("Note", style="green")
+                all_notes.add_column("Time", style="yellow")
+
+                for row in Database.all():
+                    all_notes.add_row(row["Note"], row["Time"])
 
             except FileNotFoundError as FileError:
                 yield Label(
@@ -51,7 +68,7 @@ class RawNotes(ModalScreen[None]):
             if (notes := len(Database)) == 0:
                 yield Label("[b blue]Nothing in here![/b blue]")
             else:
-                yield Label(f"[b pink]{all_notes}[/b pink]")
+                yield Static(all_notes)
 
     def action_pop_screen(self):
         """

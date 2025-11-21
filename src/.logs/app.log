@@ -173,3 +173,57 @@
 2025-11-21 22:29:48.254 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
 2025-11-21 22:29:48.829 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
 2025-11-21 22:30:10.938 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:30:49.116 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:30:49.155 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:30:50.051 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:32:07.042 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:32:17.815 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:32:47.571 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:32:47.611 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:32:47.986 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:33:05.868 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:33:05.900 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:33:06.305 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:36:25.314 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:29.447 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:30.052 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:30.436 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:30.829 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:31.225 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:31.639 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:32.054 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:32.424 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:36:32.889 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen
+2025-11-21 22:38:48.624 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:38:48.657 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:38:49.424 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:40:23.067 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:40:23.102 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:40:23.751 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:41:06.474 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:41:06.506 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:41:07.122 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:41:39.952 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:41:39.990 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:41:40.307 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:41:59.042 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:41:59.068 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:41:59.688 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:43:47.458 | INFO     | __main__:<module>:135 - User requested to run the Itomori
+2025-11-21 22:43:47.484 | INFO     | __main__:on_mount:126 - Applied quick changes and theme changed
+2025-11-21 22:43:48.748 | INFO     | __main__:action_show_row_notes:119 - User requested for exit the Raw notes screen
+2025-11-21 22:47:28.896 | INFO     | __main__:<module>:136 - User requested to run the Itomori
+2025-11-21 22:47:28.928 | INFO     | __main__:on_mount:127 - Applied quick changes and theme changed
+2025-11-21 22:47:29.682 | INFO     | __main__:action_show_row_notes:120 - User requested for exit the Raw notes screen
+2025-11-21 22:50:35.060 | INFO     | __main__:<module>:136 - User requested to run the Itomori
+2025-11-21 22:50:35.092 | INFO     | __main__:on_mount:127 - Applied quick changes and theme changed
+2025-11-21 22:50:35.444 | INFO     | __main__:action_show_row_notes:120 - User requested for exit the Raw notes screen
+2025-11-21 22:52:17.314 | INFO     | __main__:<module>:136 - User requested to run the Itomori
+2025-11-21 22:52:17.344 | INFO     | __main__:on_mount:127 - Applied quick changes and theme changed
+2025-11-21 22:52:18.345 | INFO     | __main__:action_show_row_notes:120 - User requested for exit the Raw notes screen
+2025-11-21 22:53:01.503 | INFO     | __main__:<module>:136 - User requested to run the Itomori
+2025-11-21 22:53:01.536 | INFO     | __main__:on_mount:127 - Applied quick changes and theme changed
+2025-11-21 22:53:02.110 | INFO     | __main__:action_show_row_notes:120 - User requested for exit the Raw notes screen
+2025-11-21 22:53:19.534 | INFO     | __main__:<module>:136 - User requested to run the Itomori
+2025-11-21 22:53:19.563 | INFO     | __main__:on_mount:127 - Applied quick changes and theme changed
+2025-11-21 22:53:20.056 | INFO     | __main__:action_show_row_notes:120 - User requested for exit the Raw notes screen

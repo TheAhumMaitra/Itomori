@@ -16,10 +16,14 @@ from textual.widgets import Header, Footer, Input, Label
 # import containers for textual app
 from textual.containers import ScrollableContainer
 
+
+# import pyjoke to tell user a joke
+import pyjokes
+
 # import other modules or libraries
 import uuid  # to generate id
-import json  # to add notes and view notes
-from datetime import datetime  # to get current time and date
+
+import arrow  # to get current time and date
 from textual import on  # to interact with user
 
 # All components
@@ -59,12 +63,17 @@ class Itomori(App):
         """
         This is the main method. This method is to compose Itomori
         """
+
+        joke = pyjokes.get_joke()  # tell user a joke
+
         yield Header(show_clock=True)  # show the Header with a little clock
 
         # scrollable container to show all components
         yield ScrollableContainer(
             LogoRender, WelcomeText, WhereSavedWarn, UserNoteInputBox
         )
+
+        yield Label(f"[b grey]{joke}[/b grey]", id="joke")
 
         yield Footer()  # show footer
 
@@ -84,9 +93,7 @@ class Itomori(App):
         note = self.user_note  # make the note available all over the class
 
         # get a beautiful date and time to store in the json file
-        date_and_time = (
-            datetime.now().astimezone().strftime("%A, %d %B %Y - %I:%M %p (%Z)")
-        )
+        date_and_time = arrow.now().format("dddd, DD MMMM YYYY - hh:mm A (ZZZ)")
 
         # id for our note
         id = str(uuid.uuid4())

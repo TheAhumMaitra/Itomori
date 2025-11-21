@@ -38,3 +38,18 @@ HelpScreen {
     border: solid $primary;
     align: center middle;
 }
+#joke{
+    width: 100%;
+    height: 3;
+    padding: 1 2;
+    margin: 2;
+    align: center middle;
+    text-align: center;
+}
+#NoteInputBox{
+ width: 100%;
+    height: 3;
+    margin: 2;
+    align: center middle;
+    text-align: center;
+}

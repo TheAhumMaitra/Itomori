@@ -14,5 +14,7 @@ dependencies = [
     "loguru>=0.7.3",
     "fire>=0.7.1",
     "tinydb>=4.8.2",
+    "arrow>=1.4.0",
+    "pyjokes>=0.8.3",
 ]
 license = "License.md"

@@ -31,7 +31,6 @@ class RawNotes(ModalScreen[None]):
                 Database = TinyDB("./notes.json")
 
                 all_notes = Table(
-                    title="All Notes",
                     box=box.SQUARE,  # ← adds a border all around
                     border_style="cyan",  # border color
                     show_lines=True,  # optional: lines between rows

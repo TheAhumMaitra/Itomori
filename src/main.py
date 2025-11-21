@@ -20,6 +20,9 @@ from textual.containers import Container, ScrollableContainer
 # import pyjoke to tell user a joke
 import pyjokes
 
+# to genarate new joke every 5 sec after
+import threading
+
 # import other modules or libraries
 import uuid  # to generate id
 
@@ -64,8 +67,7 @@ class Itomori(App):
         """
         This is the main method. This method is to compose Itomori
         """
-
-        joke = pyjokes.get_joke()  # tell user a joke
+        self.joke_label = Label("Loading joke...", id="joke")
 
         yield Header(show_clock=True)  # show the Header with a little clock
 
@@ -74,7 +76,7 @@ class Itomori(App):
             LogoRender, WelcomeText, WhereSavedWarn, UserNoteInputBox
         )
 
-        yield Label(f"[b grey]{joke}[/b grey]", id="joke")
+        yield self.joke_label
 
         yield Footer()  # show footer
 
@@ -120,6 +122,16 @@ class Itomori(App):
         logger.info("User requested for exit the Raw notes screen")
         self.push_screen(RawNotes())  # push the screen
 
+    def update_joke(self):
+        # This function is now ALWAYS running in a background thread
+        joke = pyjokes.get_joke()
+
+        # Safe: now we are in another thread
+        self.call_from_thread(self.joke_label.update, f"[b grey]{joke}[/b grey]")
+
+        # schedule next joke
+        threading.Timer(7, self.update_joke).start()
+
     def on_mount(self) -> None:
         """
         This method helps us to when the app run successfully it quickly run these settings or tweaks
@@ -127,6 +139,8 @@ class Itomori(App):
         logger.info("Applied quick changes and theme changed")
         # Set the Itomori's default theme
         self.theme: theme = "catppuccin-mocha"
+
+        threading.Timer(7, self.update_joke).start()
 
 
 # if the file run directly

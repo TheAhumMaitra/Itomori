@@ -34,6 +34,8 @@ class RawNotes(ModalScreen[None]):
                     box=box.SQUARE,  # ← adds a border all around
                     border_style="cyan",  # border color
                     show_lines=True,  # optional: lines between rows
+                    expand=True,
+                    highlight=True,
                 )
 
                 all_notes.add_column("Note", style="green")

@@ -89,6 +89,7 @@ class Itomori(App):
         )
         # Write the user's note to the 'notes.json' file
         try:
+            #id for the note
             id = str(uuid.uuid4())
             # Logic for writing the note
             db = TinyDB("notes.json")

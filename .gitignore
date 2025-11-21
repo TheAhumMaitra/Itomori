@@ -18,3 +18,8 @@ src/notes.json
 src/notes.jsonl
 notes.json
 notes.jsonl
+
+
+src/.cache
+src/.logs/app.log
+src/.logs

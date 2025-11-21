@@ -6,10 +6,9 @@ from textual.widgets import Label
 from textual.containers import ScrollableContainer
 from tinydb import TinyDB
 from textual.widgets import Static
-from rich.table import Table
 
 # To view the table
-from rich.console import Console
+from rich.table import Table
 from rich import box
 
 

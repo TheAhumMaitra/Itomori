@@ -4,7 +4,7 @@ Main python file to render Itomori
 
 # import all necessary libraries or modules
 from tinydb import TinyDB
-import fire  # to give user a goood CLI UX
+
 from loguru import logger  # for save and write the logs
 
 # Textual necessary imports
@@ -115,6 +115,10 @@ class Itomori(App):
     class ViewNote:
         Container(RawNotes())
 
+    def action_quit(self):
+        logger.info("User requested to exit the app!")
+        self.app.exit()
+
     def action_show_row_notes(self) -> None:
         """
         This method help us, if user pressed 'n' key in their keyboard then it help us to show the all saved notes, raw json file.
@@ -147,8 +151,8 @@ class Itomori(App):
 if __name__ == "__main__":
     app = Itomori()  # app is 'Itomori' class [main class]
     try:
-        logger.info("User requested to run the Itomori")
         app.run()  # try to run the app
+        logger.info("User requested to run the Itomori")
 
     # if any critical error stops us to run the app or anything wrong
     except Exception as Error:

@@ -7,6 +7,9 @@ from textual.containers import ScrollableContainer
 from tinydb import TinyDB
 from textual.widgets import Static
 
+# to write logs
+from loguru import logger
+
 # To view the table
 from rich.table import Table
 from rich import box
@@ -17,6 +20,7 @@ class RawNotes(ModalScreen[None]):
     This widget helps users to see all raw json file notes.
     """
 
+    logger.add(".logs/app.log", rotation="10 MB")
     # keyboard bindings for the modal screen
     BINDINGS = [("escape", "pop_screen")]
 
@@ -68,6 +72,7 @@ class RawNotes(ModalScreen[None]):
             if (notes := len(Database)) == 0:
                 yield Label("[b blue]Nothing in here![/b blue]")
             else:
+                logger.info("User requested to view notes")
                 yield Static(all_notes)
 
     def action_pop_screen(self):

@@ -35,3 +35,5 @@
 2025-11-21 16:41:20.216 | INFO     | __main__:on_mount:123 - Applied quick changes and theme changed
 2025-11-21 16:43:19.187 | INFO     | __main__:<module>:132 - User requested to run the Itomori
 2025-11-21 16:43:19.238 | INFO     | __main__:on_mount:123 - Applied quick changes and theme changed
+2025-11-21 16:47:09.768 | INFO     | __main__:action_show_row_notes:116 - User requested for exit the Raw notes screen
+2025-11-21 16:47:34.534 | INFO     | __main__:action_show_ver:108 - User requested for exit the Version modal screen

@@ -23,3 +23,7 @@ notes.jsonl
 src/.cache
 src/.logs/app.log
 src/.logs
+
+.vscode
+.idea
+.zed

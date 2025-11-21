@@ -1,16 +1,17 @@
 # Necessary Textual components and widgets
+import time
 from textual.screen import ModalScreen
 from textual.app import ComposeResult
 from textual.widgets import Label
 from textual.containers import Container
 
-class RawNotes(ModalScreen[None]):
 
+class RawNotes(ModalScreen[None]):
     """
     This widget helps users to see all raw json file notes.
     """
 
-    #keyboard bindings for the modal screen
+    # keyboard bindings for the modal screen
     BINDINGS = [("escape", "pop_screen")]
 
     def compose(self) -> ComposeResult:
@@ -18,12 +19,29 @@ class RawNotes(ModalScreen[None]):
         Main method for this widget
         """
 
-        #read the json file
+        # read the json file
         with Container(id="ViewRawNotesScreen"):
-            with open("./notes.json", "r") as notes:
-                all_notes = notes.read()
+            try:
+                with open("./notes.json", "r") as notes:
+                    all_notes = notes.read()
 
-            #all labels
+            except FileNotFoundError as FileError:
+                yield Label(
+                    f"[b red]File not found, ERROR={FileError}! The app will close in 5 seconds[/b red]"
+                )
+                time.sleep(5)
+                raise FileNotFoundError("THe 'notes.json' file is not here!")
+
+            except Exception as UnexpectedError:
+                yield Label(
+                    f"[b red]Unexpected error - {UnexpectedError}! The app will close in 5 seconds[/b red]"
+                )
+                time.sleep(5)
+                raise Exception(
+                    f"Something is wrong! Unexpected error - {UnexpectedError}"
+                )
+
+            # all labels
             yield Label("[b yellow]Press ESC to exit this screen[/b yellow]\n\n\n\n")
             yield Label("[b yellow underline]ALL NOTES : [/b yellow underline]\n\n\n\n")
 

@@ -11,5 +11,8 @@ dependencies = [
     "textual[syntax]>=6.6.0",
     "textual-dev>=1.8.0",
     "black>=25.11.0",
+    "loguru>=0.7.3",
+    "fire>=0.7.1",
+    "tinydb>=4.8.2",
 ]
 license = "License.md"

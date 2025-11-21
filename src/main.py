@@ -3,12 +3,15 @@ Main python file to render Itomori
 """
 
 # import all necessary libraries or modules
+from tinydb import TinyDB
+import fire  # to give user a goood CLI UX
+from loguru import logger  # for save and write the logs
 
 # Textual necessary imports
 from textual.app import App, ComposeResult
 
 # import necessary textual widgets
-from textual.widgets import Header, Footer, Input
+from textual.widgets import Header, Footer, Input, Label
 
 # import containers for textual app
 from textual.containers import ScrollableContainer
@@ -27,6 +30,9 @@ from components.LogoText import LogoRender
 from components.VersionScreen import VersionScreen
 from components.ViewRawNotes import RawNotes
 
+from tinydb.storages import JSONStorage
+from tinydb.middlewares import CachingMiddleware
+
 
 # main app class
 class Itomori(App):
@@ -35,6 +41,8 @@ class Itomori(App):
 
     :param app - inhertence from the Textual app class
     """
+
+    logger.add(".logs/app.log", rotation="10 MB")
 
     # css style path
     CSS_PATH = "./style.tcss"
@@ -66,6 +74,8 @@ class Itomori(App):
         """
         This function helps us to receive user's typed input and store them in a json file (notes.json). This json file can keep append every time.
         """
+        logger.info("User requested to add a note")
+
         user_typed_input = self.query_one("#NoteInputBox")  # get user input
         self.user_note = (
             user_typed_input.value.strip()
@@ -77,34 +87,51 @@ class Itomori(App):
         date_and_time = (
             datetime.now().astimezone().strftime("%A, %d %B %Y - %I:%M %p (%Z)")
         )
+        # Write the user's note to the 'notes.json' file
+        try:
+            id = str(uuid.uuid4())
+            # Logic for writing the note
+            db = TinyDB("notes.json")
+            db.insert({"id": id, "note": note, "time": date_and_time})
 
-        # notes dictionary to store and organize random note id, note and time and date for that
-        notes = {
-            "ID": str(uuid.uuid4()),
-            "Time": date_and_time,
-            "Task Text": note,
-        }
+            logger.info(f"Note successfully wrote with ID: {id}")
 
-        # Write the user's note to file
-        with open("notes.json", "a") as notesfile:
-            notesfile.write(json.dumps(notes) + "\n")
+        except FileNotFoundError as FileError:
+            logger.error("notes.json file not found")
+            yield Label(
+                f"[b red]File not found, ERROR={FileError}! The app will close in 5 seconds[/b red]"
+            )
+            time.sleep(5)
+            raise FileNotFoundError("THe 'notes.json' file is not here!")
+
+        except Exception as UnexpectedError:
+            logger.error(f"Unexpected error happend. Error = {UnexpectedError}")
+            yield Label(
+                f"[b red]Unexpected error - {UnexpectedError}! The app will close in 5 seconds[/b red]"
+            )
+            time.sleep(5)
+            raise Exception(f"Something is wrong! Unexpected error - {UnexpectedError}")
 
     def action_show_ver(self) -> None:
         """
         This method help us, if user pressed 'v' key in their keyboard then it help us to show the Version component (screen).
         """
+        logger.info("User requested for exit the Version modal screen")
+
         self.push_screen(VersionScreen())  # push the modal screen
 
     def action_show_row_notes(self) -> None:
         """
         This method help us, if user pressed 'n' key in their keyboard then it help us to show the all saved notes, raw json file.
         """
+        logger.info("User requested for exit the Raw notes screen")
         self.push_screen(RawNotes())  # push the screen
 
     def on_mount(self) -> None:
         """
         This method helps us to when the app run successfully it quickly run these settings or tweaks
         """
+        logger.info("Applied quick changes and theme changed")
         # Set the Itomori's default theme
         self.theme: theme = "catppuccin-mocha"
 
@@ -113,9 +140,11 @@ class Itomori(App):
 if __name__ == "__main__":
     app = Itomori()  # app is 'Itomori' class [main class]
     try:
+        logger.info("User requested to run the Itomori")
         app.run()  # try to run the app
+
     # if any critical error stops us to run the app or anything wrong
     except Exception as Error:
         raise Exception(
-            f"Sorry! Something went wrong, it is too critical. Raw error - {Error}" #give user a friendly messege and also give user user what goes wrong
+            f"Sorry! Something went wrong, it is too critical. Raw error - {Error}"  # give user a friendly messege and also give user user what goes wrong
         )

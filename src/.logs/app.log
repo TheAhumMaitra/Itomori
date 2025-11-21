@@ -1,0 +1,27 @@
+2025-11-21 15:04:47.686 | INFO     | __main__:<module>:144 - User requested to run the Itomori
+2025-11-21 15:04:47.726 | INFO     | __main__:on_mount:135 - Applied quick changes and theme changed
+2025-11-21 15:39:55.417 | INFO     | __main__:<module>:145 - User requested to run the Itomori
+2025-11-21 15:39:55.452 | INFO     | __main__:on_mount:136 - Applied quick changes and theme changed
+2025-11-21 15:40:35.050 | INFO     | __main__:action_show_ver:121 - User requested for exit the Version modal screen
+2025-11-21 15:40:37.176 | INFO     | __main__:action_show_ver:121 - User requested for exit the Version modal screen
+2025-11-21 15:50:22.755 | INFO     | __main__:<module>:137 - User requested to run the Itomori
+2025-11-21 15:50:22.783 | INFO     | __main__:on_mount:128 - Applied quick changes and theme changed
+2025-11-21 15:52:45.228 | INFO     | __main__:<module>:137 - User requested to run the Itomori
+2025-11-21 15:52:45.256 | INFO     | __main__:on_mount:128 - Applied quick changes and theme changed
+2025-11-21 15:53:23.221 | INFO     | __main__:action_show_row_notes:121 - User requested for exit the Raw notes screen
+2025-11-21 15:55:21.725 | INFO     | __main__:<module>:137 - User requested to run the Itomori
+2025-11-21 15:55:21.754 | INFO     | __main__:on_mount:128 - Applied quick changes and theme changed
+2025-11-21 15:56:53.803 | INFO     | __main__:<module>:137 - User requested to run the Itomori
+2025-11-21 15:56:53.834 | INFO     | __main__:on_mount:128 - Applied quick changes and theme changed
+2025-11-21 15:58:24.592 | INFO     | __main__:<module>:138 - User requested to run the Itomori
+2025-11-21 15:58:24.618 | INFO     | __main__:on_mount:129 - Applied quick changes and theme changed
+2025-11-21 16:10:56.484 | INFO     | __main__:<module>:142 - User requested to run the Itomori
+2025-11-21 16:10:56.512 | INFO     | __main__:on_mount:133 - Applied quick changes and theme changed
+2025-11-21 16:11:51.476 | INFO     | __main__:<module>:142 - User requested to run the Itomori
+2025-11-21 16:11:51.507 | INFO     | __main__:on_mount:133 - Applied quick changes and theme changed
+2025-11-21 16:12:03.536 | INFO     | __main__:<module>:142 - User requested to run the Itomori
+2025-11-21 16:12:03.564 | INFO     | __main__:on_mount:133 - Applied quick changes and theme changed
+2025-11-21 16:15:20.253 | INFO     | __main__:<module>:142 - User requested to run the Itomori
+2025-11-21 16:15:20.284 | INFO     | __main__:on_mount:133 - Applied quick changes and theme changed
+2025-11-21 16:16:20.532 | INFO     | __main__:<module>:143 - User requested to run the Itomori
+2025-11-21 16:16:20.561 | INFO     | __main__:on_mount:134 - Applied quick changes and theme changed

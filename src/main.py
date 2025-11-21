@@ -88,17 +88,10 @@ class Itomori(App):
             datetime.now().astimezone().strftime("%A, %d %B %Y - %I:%M %p (%Z)")
         )
 
-        # notes dictionary to store and organize random note id, note and time and date for that
-        notes = {
-            "ID": str(uuid.uuid4()),
-            "Time": date_and_time,
-            "Task Text": note,
-        }
+        # id for our note
         id = str(uuid.uuid4())
-        # # Write the user's note to file
-        # with open("notes.json", "a") as notesfile:
-        #     notesfile.write(json.dumps(notes) + ",\n")
-        #
+
+        # insert the note (with id, time and date)
         db.insert({"ID": id, "Note": note, "Time": date_and_time})
 
     def action_show_ver(self) -> None:

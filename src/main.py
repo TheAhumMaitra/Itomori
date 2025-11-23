@@ -127,14 +127,8 @@ class Itomori(App):
         self.push_screen(RawNotes())  # push the screen
 
     def update_joke(self):
-        # This function is now ALWAYS running in a background thread
         joke = pyjokes.get_joke()
-
-        # Safe: now we are in another thread
-        self.call_from_thread(self.joke_label.update, f"[b grey]{joke}[/b grey]")
-
-        # schedule next joke
-        threading.Timer(10, self.update_joke).start()
+        self.joke_label.update(f"[b grey]{joke}[/b grey]")
 
     def on_mount(self) -> None:
         """
@@ -144,7 +138,11 @@ class Itomori(App):
         # Set the Itomori's default theme
         self.theme: theme = "catppuccin-mocha"
 
-        threading.Timer(10, self.update_joke).start()
+    def on_ready(self) -> None:
+        self.update_joke()
+
+        # update every 10 seconds automatically
+        self.set_interval(10, self.update_joke)
 
 
 # if the file run directly

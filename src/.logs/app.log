@@ -30,3 +30,45 @@
 2025-11-22 00:05:17.179 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
 2025-11-22 00:05:17.191 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
 2025-11-22 00:05:17.191 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 14:33:48.556 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-23 14:33:48.556 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-23 14:33:53.499 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 14:33:53.499 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 14:33:53.508 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 14:33:53.508 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 14:33:56.380 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-23 14:33:56.380 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-23 14:33:58.007 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 14:33:58.007 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 14:33:58.012 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 14:33:58.012 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 14:36:00.063 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-23 14:36:00.063 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-23 14:36:00.817 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 14:36:00.817 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 14:36:00.822 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 14:36:00.822 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 15:10:31.641 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-23 15:10:31.641 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-23 15:10:32.048 | INFO     | __main__:<module>:155 - User requested to run the Itomori
+2025-11-23 15:10:32.048 | INFO     | __main__:<module>:155 - User requested to run the Itomori
+2025-11-23 15:11:11.018 | INFO     | __main__:on_mount:142 - Applied quick changes and theme changed
+2025-11-23 15:11:11.018 | INFO     | __main__:on_mount:142 - Applied quick changes and theme changed
+2025-11-23 15:11:11.308 | INFO     | __main__:<module>:154 - User requested to run the Itomori
+2025-11-23 15:11:11.308 | INFO     | __main__:<module>:154 - User requested to run the Itomori
+2025-11-23 15:12:28.606 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-23 15:12:28.606 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-23 15:12:28.834 | INFO     | __main__:<module>:155 - User requested to run the Itomori
+2025-11-23 15:12:28.834 | INFO     | __main__:<module>:155 - User requested to run the Itomori
+2025-11-23 15:12:35.147 | INFO     | __main__:on_mount:142 - Applied quick changes and theme changed
+2025-11-23 15:12:35.147 | INFO     | __main__:on_mount:142 - Applied quick changes and theme changed
+2025-11-23 15:12:35.472 | INFO     | __main__:<module>:158 - User requested to run the Itomori
+2025-11-23 15:12:35.472 | INFO     | __main__:<module>:158 - User requested to run the Itomori
+2025-11-23 15:13:53.715 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-23 15:13:53.715 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-23 15:14:03.141 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-23 15:14:03.141 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-23 15:14:03.369 | INFO     | __main__:<module>:153 - User requested to run the Itomori
+2025-11-23 15:14:03.369 | INFO     | __main__:<module>:153 - User requested to run the Itomori
+2025-11-23 15:14:08.116 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-23 15:14:08.116 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed

@@ -24,3 +24,9 @@
 2025-11-21 23:52:47.940 | INFO     | __main__:action_quit:119 - User requested to exit the app!
 2025-11-21 23:53:31.497 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
 2025-11-21 23:53:31.497 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-22 00:05:11.315 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-22 00:05:11.315 | INFO     | __main__:on_mount:143 - Applied quick changes and theme changed
+2025-11-22 00:05:17.179 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-22 00:05:17.179 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-22 00:05:17.191 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-22 00:05:17.191 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes

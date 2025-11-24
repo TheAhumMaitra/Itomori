@@ -78,3 +78,15 @@
 2025-11-23 15:16:25.422 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
 2025-11-23 15:16:25.433 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
 2025-11-23 15:16:25.433 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-25 00:08:40.677 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-25 00:08:40.677 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-25 00:08:50.180 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-25 00:08:50.180 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-25 00:08:50.189 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-25 00:08:50.189 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-25 00:08:52.314 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-25 00:08:52.314 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-25 00:08:54.888 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-25 00:08:54.888 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-25 00:08:55.111 | INFO     | __main__:<module>:153 - User requested to run the Itomori
+2025-11-25 00:08:55.111 | INFO     | __main__:<module>:153 - User requested to run the Itomori

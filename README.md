@@ -18,7 +18,9 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 ## Linux
 
-To install 'Itomori' simply run the [`install.sh`](install.sh) file , which simply helps to install this application and also creates a desktop shortcut.
+```
+curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash
+```
 
 # 💬 Contribute
 

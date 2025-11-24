@@ -1,68 +1,101 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
 
-echo "🚀 Welcome to the Itomori Installation Script!"
-echo ""
-echo "Author : Ahum Maitra"
-echo ""
-
-# Detect home directory
-USER_HOME="$HOME"
-INSTALL_DIR="$USER_HOME/Itomori"
-
-echo "📦 Cloning repository..."
-git clone https://github.com/TheAhumMaitra/Itomori "$INSTALL_DIR"
-
-echo "📁 Moving into project..."
-cd "$INSTALL_DIR" || exit
-
-echo "🐍 Creating virtual environment..."
-python3 -m venv .venv
-
-echo "📁 Activating environment and installing dependencies..."
-source .venv/bin/activate
-pip install textual
-
-echo "✅ Installation completed successfully!"
-echo ""
-
-# Create launcher script
-LAUNCHER="$HOME/.local/bin/itomori"
-
-echo "📝 Creating launcher script at $LAUNCHER"
-
-mkdir -p "$HOME/.local/bin"
-
-cat <<EOF > "$LAUNCHER"
-#!/bin/bash
-cd "$INSTALL_DIR/src"
-source "$INSTALL_DIR/.venv/bin/activate"
-python main.py
+# ───────────────────────────────────────────
+# ASCII LOGO
+# ───────────────────────────────────────────
+logo=$(cat << 'EOF'
+.___  __                              .__
+|   |/  |_  ____   _____   ___________|__|
+|   \   __\/  _ \ /     \ /  _ \_  __ \  |
+|   ||  | (  <_> )  Y Y  (  <_> )  | \/  |
+|___||__|  \____/|__|_|  /\____/|__|  |__|
+                       \/
+        Itomori TUI Installer
 EOF
+)
 
-chmod +x "$LAUNCHER"
+echo "$logo"
+echo ""
 
-echo "🎉 Launcher created: run 'itomori' from terminal!"
-
-# Create desktop entry
+# ───────────────────────────────────────────
+# VARIABLES
+# ───────────────────────────────────────────
+REPO_URL="https://github.com/TheAhumMaitra/Itomori"
+INSTALL_DIR="$HOME/Itomori"
 DESKTOP_FILE="$HOME/.local/share/applications/itomori.desktop"
 
-echo "🖥 Creating desktop shortcut at $DESKTOP_FILE"
+# ───────────────────────────────────────────
+# CHECK PYTHON
+# ───────────────────────────────────────────
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "Python3 not found. Installing..."
+
+    if command -v apt >/dev/null 2>&1; then
+        sudo apt update && sudo apt install -y python3 python3-venv python3-pip
+    elif command -v pacman >/dev/null 2>&1; then
+        sudo pacman -Sy --noconfirm python python-pip
+    elif command -v dnf >/dev/null 2>&1; then
+        sudo dnf install -y python3 python3-pip
+    elif command -v emerge >/dev/null 2>&1; then
+        sudo emerge --ask dev-lang/python
+    else
+        echo "❌ Unsupported distro. Install Python manually."
+        exit 1
+    fi
+fi
+
+echo "✔ Python found or installed."
+
+# ───────────────────────────────────────────
+# CLONE REPO
+# ───────────────────────────────────────────
+if [ -d "$INSTALL_DIR" ]; then
+    echo "Directory already exists. Pulling latest changes..."
+    git -C "$INSTALL_DIR" pull
+else
+    echo "Cloning Itomori repository..."
+    git clone "$REPO_URL" "$INSTALL_DIR"
+fi
+
+# ───────────────────────────────────────────
+# SETUP PYTHON VENV
+# ───────────────────────────────────────────
+echo "Setting up virtual environment..."
+python3 -m venv "$INSTALL_DIR/venv"
+source "$INSTALL_DIR/venv/bin/activate"
+
+echo "Installing Python dependencies..."
+pip install --upgrade pip
+pip install -r "$INSTALL_DIR/requirements.txt" || true
+
+deactivate
+
+echo "✔ Virtual environment ready."
+
+# ───────────────────────────────────────────
+# CREATE DESKTOP LAUNCHER
+# ───────────────────────────────────────────
+echo "Creating desktop application entry..."
 
 mkdir -p "$HOME/.local/share/applications"
 
 cat <<EOF > "$DESKTOP_FILE"
 [Desktop Entry]
-Type=Application
 Name=Itomori
-Comment=Minimal TUI notes application
-Exec=$LAUNCHER
-Icon=utilities-terminal
+Comment=Itomori TUI Application
+Exec=$INSTALL_DIR/venv/bin/python $INSTALL_DIR/itomori.py
+Icon=$INSTALL_DIR/icon.png
 Terminal=true
-Categories=Utility;TextEditor;
+Type=Application
+Categories=Utility;
 EOF
 
-echo "✔ Desktop shortcut created!"
-echo "📌 Check your applications menu for Itomori."
+chmod +x "$DESKTOP_FILE"
 
+echo "✔ Desktop entry created: $DESKTOP_FILE"
+echo "✔ You can now search 'Itomori' in your applications menu."
+
+# ───────────────────────────────────────────
 echo ""
-echo "🎀 Thank you for installing Itomori!"
+echo "🎉 Installation complete!"

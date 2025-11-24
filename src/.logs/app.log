@@ -72,3 +72,9 @@
 2025-11-23 15:14:03.369 | INFO     | __main__:<module>:153 - User requested to run the Itomori
 2025-11-23 15:14:08.116 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
 2025-11-23 15:14:08.116 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-23 15:16:03.161 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-23 15:16:03.161 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-23 15:16:25.422 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 15:16:25.422 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-23 15:16:25.433 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-23 15:16:25.433 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes

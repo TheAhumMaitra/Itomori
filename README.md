@@ -18,6 +18,8 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 ## Linux
 
+**Pre-requirements: ** curl
+
 ```
 curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash
 ```

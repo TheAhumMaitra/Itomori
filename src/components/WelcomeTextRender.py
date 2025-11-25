@@ -5,4 +5,4 @@ from textual.widgets import Label
 This file is a component, which is just helps to render the welcome text
 """
 
-WelcomeText = Label("Welcome to Itomori!", id="WelText")
+WelcomeText: Label = Label("Welcome to Itomori!", id="WelText")

@@ -11,12 +11,13 @@ logo=$(cat << 'EOF'
 |   ||  | (  <_> )  Y Y  (  <_> )  | \/  |
 |___||__|  \____/|__|_|  /\____/|__|  |__|
                        \/
-        Itomori TUI Installer
+                Itomori
 EOF
 )
 
 echo "$logo"
 echo ""
+echo "Installation script by Ahum Maitra"
 
 # ───────────────────────────────────────────
 # VARIABLES

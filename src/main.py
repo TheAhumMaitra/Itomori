@@ -53,10 +53,10 @@ class Itomori(App):
     logger.add(".logs/app.log", rotation="10 MB")
 
     # css style path
-    CSS_PATH = "./style.tcss"
+    CSS_PATH: str = "./style.tcss"
 
     # keyboard bindings for user
-    BINDINGS = [
+    BINDINGS: list[tuple(str)] = [
         ("^q", "quit", "Quit the app"),
         ("v", "show_ver", "Show version and info"),
         ("n", "show_row_notes", "View All Notes"),
@@ -67,7 +67,7 @@ class Itomori(App):
         """
         This is the main method. This method is to compose Itomori
         """
-        self.joke_label = Label("Loading joke...", id="joke")
+        self.joke_label: Label = Label("Loading joke...", id="joke")
 
         yield Header(show_clock=True)  # show the Header with a little clock
 
@@ -87,9 +87,9 @@ class Itomori(App):
         This function helps us to receive user's typed input and store them in a json file (notes.json). This json file can keep append every time.
         """
 
-        db = TinyDB("notes.json")
+        db: TinyDB = TinyDB("notes.json")
         user_typed_input = self.query_one("#NoteInputBox")  # get user input
-        self.user_note = (
+        self.user_note: tuple() = (
             user_typed_input.value.strip()
         )  # get the real value form 'user_typed_input'
 
@@ -127,7 +127,7 @@ class Itomori(App):
         self.push_screen(RawNotes())  # push the screen
 
     def update_joke(self):
-        joke = pyjokes.get_joke()
+        joke: pyjokes = pyjokes.get_joke()
         self.joke_label.update(f"[b grey]{joke}[/b grey]")
 
     def on_mount(self) -> None:
@@ -136,7 +136,7 @@ class Itomori(App):
         """
         logger.info("Applied quick changes and theme changed")
         # Set the Itomori's default theme
-        self.theme: theme = "catppuccin-mocha"
+        self.theme = "catppuccin-mocha"
 
     def on_ready(self) -> None:
         self.update_joke()
@@ -147,7 +147,7 @@ class Itomori(App):
 
 # if the file run directly
 if __name__ == "__main__":
-    app = Itomori()  # app is 'Itomori' class [main class]
+    app: Itomori = Itomori()  # app is 'Itomori' class [main class]
     try:
         app.run()  # try to run the app
         logger.info("User requested to run the Itomori")

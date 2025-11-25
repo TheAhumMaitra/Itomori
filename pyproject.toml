@@ -17,5 +17,6 @@ dependencies = [
     "ruff>=0.14.6",
     "rich>=14.2.0",
     "pytest>=9.0.1",
+    "mypy>=1.18.2",
 ]
 license = "License.md"

@@ -22,7 +22,7 @@ class RawNotes(ModalScreen[None]):
 
     logger.add(".logs/app.log", rotation="10 MB")
     # keyboard bindings for the modal screen
-    BINDINGS = [("escape", "pop_screen")]
+    BINDINGS: list(tuple(str)) = [("escape", "pop_screen")]
 
     def compose(self) -> ComposeResult:
         """
@@ -32,9 +32,9 @@ class RawNotes(ModalScreen[None]):
         # read the json file
         with ScrollableContainer(id="ViewRawNotesScreen"):
             try:
-                Database = TinyDB("./notes.json")
+                Database: TinyDB = TinyDB("./notes.json")
 
-                all_notes = Table(
+                all_notes: Table = Table(
                     box=box.SQUARE,  # ← adds a border all around
                     border_style="cyan",  # border color
                     show_lines=True,  # optional: lines between rows

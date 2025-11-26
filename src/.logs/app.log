@@ -158,3 +158,23 @@
 2025-11-25 17:01:53.099 | INFO     | __main__:action_quit:119 - User requested to exit the app!
 2025-11-25 17:01:53.321 | INFO     | __main__:<module>:153 - User requested to run the Itomori
 2025-11-25 17:01:53.321 | INFO     | __main__:<module>:153 - User requested to run the Itomori
+2025-11-26 07:30:14.087 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-26 07:30:14.087 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-26 07:30:32.971 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-26 07:30:32.971 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-26 07:30:32.981 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-26 07:30:32.981 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-26 07:30:36.280 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-26 07:30:36.280 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-26 07:30:39.248 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-26 07:30:39.248 | INFO     | __main__:action_quit:119 - User requested to exit the app!
+2025-11-26 07:30:39.471 | INFO     | __main__:<module>:153 - User requested to run the Itomori
+2025-11-26 07:30:39.471 | INFO     | __main__:<module>:153 - User requested to run the Itomori
+2025-11-26 07:35:50.896 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-26 07:35:50.896 | INFO     | __main__:on_mount:137 - Applied quick changes and theme changed
+2025-11-26 07:36:20.284 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-26 07:36:20.284 | INFO     | __main__:action_show_ver:111 - User requested for exit the Version modal screen
+2025-11-26 07:36:23.516 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-26 07:36:23.516 | INFO     | __main__:action_show_row_notes:126 - User requested for exit the Raw notes screen
+2025-11-26 07:36:23.518 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes
+2025-11-26 07:36:23.518 | INFO     | components.ViewRawNotes:compose:75 - User requested to view notes

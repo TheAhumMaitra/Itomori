@@ -26,6 +26,7 @@ import threading
 # import other modules or libraries
 import uuid  # to generate id
 
+from typing import Any, List, Tuple
 import arrow  # to get current time and date
 from textual import on  # to interact with user
 
@@ -56,7 +57,7 @@ class Itomori(App):
     CSS_PATH: str = "./style.tcss"
 
     # keyboard bindings for user
-    BINDINGS: list[tuple(str)] = [
+    BINDINGS: list[Tuple(str)] = [
         ("^q", "quit", "Quit the app"),
         ("v", "show_ver", "Show version and info"),
         ("n", "show_row_notes", "View All Notes"),
@@ -88,18 +89,19 @@ class Itomori(App):
         """
 
         db: TinyDB = TinyDB("notes.json")
-        user_typed_input = self.query_one("#NoteInputBox")  # get user input
-        self.user_note: tuple() = (
+        user_typed_input: Any = self.query_one("#NoteInputBox")  # get user input
+
+        self.user_note: str = (
             user_typed_input.value.strip()
         )  # get the real value form 'user_typed_input'
 
-        note = self.user_note  # make the note available all over the class
+        note: str = self.user_note  # make the note available all over the class
 
         # get a beautiful date and time to store in the json file
-        date_and_time = arrow.now().format("dddd, DD MMMM YYYY - hh:mm A (ZZZ)")
+        date_and_time: str = arrow.now().format("dddd, DD MMMM YYYY - hh:mm A (ZZZ)")
 
         # id for our note
-        id = str(uuid.uuid4())
+        id: str = str(uuid.uuid4())
 
         # insert the note (with id, time and date)
         db.insert({"ID": id, "Note": note, "Time": date_and_time})
@@ -115,7 +117,7 @@ class Itomori(App):
     class ViewNote:
         Container(RawNotes())
 
-    def action_quit(self):
+    def action_quit(self) -> None:
         logger.info("User requested to exit the app!")
         self.app.exit()
 
@@ -126,8 +128,8 @@ class Itomori(App):
         logger.info("User requested for exit the Raw notes screen")
         self.push_screen(RawNotes())  # push the screen
 
-    def update_joke(self):
-        joke: pyjokes = pyjokes.get_joke()
+    def update_joke(self) -> None:
+        joke: str = pyjokes.get_joke()
         self.joke_label.update(f"[b grey]{joke}[/b grey]")
 
     def on_mount(self) -> None:

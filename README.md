@@ -4,7 +4,7 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 # Preview
 
-https://raw.githubusercontent.com/TheAhumMaitra/Itomori/main/assests/videos/Show_off.mp4
+[preview of Itomori](https://itomori-website.vercel.app/Show_off.mp4)
 
 # ✨ Features
 

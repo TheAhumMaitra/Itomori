@@ -19,30 +19,31 @@ from textual.screen import ModalScreen
 from textual.app import ComposeResult
 from textual.widgets import Label
 from textual.containers import Container
+from components.LicenseScreen import LicenseScreen
 
 """
 This file is a component, which is just helps to render the version screen.
 """
 
 
-class VersionScreen(ModalScreen[None]):
+class AboutScreen(ModalScreen[None]):
     """
-    This class render the 'VersionSceen' Modal Screen.
+    This class render the About Modal Screen.
 
     :param ModalScreen[None] - it inherit from the Textual Modal Screen
     """
 
     # keyboard bindings for this modal screen
-    BINDINGS: list[tuple(str)] = [("escape", "pop_screen")]
+    BINDINGS: list[tuple(str)] = [("escape", "pop_screen"), ("l", "show_license", "Show License info")]
 
     # css link
     CSS_PATH: str = "../style.tcss"
 
     def compose(self) -> ComposeResult:
         """
-        Main Textaul compose function to render the Version MOdal Screen
+        Main Textaul compose function to render the About Modal Screen
         """
-        with Container(id="VersionScreen"):
+        with Container(id="AboutScreen"):
             """
             Main container for the Version Modal Screen
             """
@@ -59,9 +60,15 @@ class VersionScreen(ModalScreen[None]):
 
             # An info, how to exit this modal screen
             yield Label("Press [b]ESC[/b] to exit this screen.")
+            yield Label("[b underline green]Press `L` to view License info[/b underline green]")
 
     def action_pop_screen(self) -> None:
         """
         This Textual action method helps to exit the modal screen by pressing 'ESC'
         """
         self.dismiss()  # if the action triggered then dismiss the screen
+
+    def action_show_license(self):
+        self.app.push_screen(LicenseScreen())
+
+

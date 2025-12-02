@@ -53,7 +53,7 @@ from components.WelcomeTextRender import WelcomeText
 from components.AddNoteInputBox import UserNoteInputBox
 from components.InfoWhereSaved import WhereSavedWarn
 from components.LogoText import LogoRender
-from components.VersionScreen import VersionScreen
+from components.AboutScreen import AboutScreen
 from components.ViewRawNotes import RawNotes
 
 from tinydb.storages import JSONStorage
@@ -76,7 +76,7 @@ class Itomori(App):
     # keyboard bindings for user
     BINDINGS: list[Tuple(str)] = [
         ("^q", "quit", "Quit the app"),
-        ("v", "show_ver", "Show version and info"),
+        ("v", "show_ver", "Show About info"),
         ("n", "show_row_notes", "View All Notes"),
     ]
 
@@ -129,7 +129,7 @@ class Itomori(App):
         """
         logger.info("User requested for exit the Version modal screen")
 
-        self.push_screen(VersionScreen())  # push the modal screen
+        self.push_screen(AboutScreen())  # push the modal screen
 
     class ViewNote:
         Container(RawNotes())

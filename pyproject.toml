@@ -1,9 +1,10 @@
 [project]
 name = "Itomori"
 version = "1.0.0"
-description = "TUI Note Writing Tool"
+description = "Blazingly fast, minimalistic quick Note taking TUI app. Easy to store, run, share."
 readme = "README.md"
 requires-python = ">=3.14"
+keywords = ["TUI app", "Note taker", "Textual app", "Quick note taking app"]
 authors = [
     { name = "Ahum Maitra", email = "theahummaitra@gmail.com" }
 ]
@@ -19,7 +20,14 @@ dependencies = [
     "pytest>=9.0.1",
     "mypy>=1.18.2",
 ]
+
 license = "GPL-3.0-only"
+
+[project.urls]
+Homepage = "https://itomori-website.vercel.app/"
+Documentation = "https://itomori-documentation.vercel.app/"
+Repository = "https://github.com/TheAhumMaitra/Itomori"
+
 
 [project.scripts]
 

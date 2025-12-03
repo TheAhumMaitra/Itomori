@@ -49,12 +49,12 @@ from textual import on  # to interact with user
 
 
 # All components
-from components.WelcomeTextRender import WelcomeText
-from components.AddNoteInputBox import UserNoteInputBox
-from components.InfoWhereSaved import WhereSavedWarn
-from components.LogoText import LogoRender
-from components.AboutScreen import AboutScreen
-from components.ViewRawNotes import RawNotes
+from .components.WelcomeTextRender import WelcomeText
+from .components.AddNoteInputBox import UserNoteInputBox
+from .components.InfoWhereSaved import WhereSavedWarn
+from .components.LogoText import LogoRender
+from .components.AboutScreen import AboutScreen
+from .components.ViewRawNotes import RawNotes
 
 from tinydb.storages import JSONStorage
 from tinydb.middlewares import CachingMiddleware

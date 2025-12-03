@@ -49,12 +49,12 @@ from textual import on  # to interact with user
 
 
 # All components
-from .components.WelcomeTextRender import WelcomeText
-from .components.AddNoteInputBox import UserNoteInputBox
-from .components.InfoWhereSaved import WhereSavedWarn
-from .components.LogoText import LogoRender
-from .components.AboutScreen import AboutScreen
-from .components.ViewRawNotes import RawNotes
+from Itomori.components.WelcomeTextRender import WelcomeText
+from Itomori.components.AddNoteInputBox import UserNoteInputBox
+from Itomori.components.InfoWhereSaved import WhereSavedWarn
+from Itomori.components.LogoText import LogoRender
+from Itomori.components.AboutScreen import AboutScreen
+from Itomori.components.ViewRawNotes import RawNotes
 
 from tinydb.storages import JSONStorage
 from tinydb.middlewares import CachingMiddleware

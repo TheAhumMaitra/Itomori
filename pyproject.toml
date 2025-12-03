@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "TUI Note Writing Tool"
 readme = "README.md"
 requires-python = ">=3.14"
-author = [
+authors = [
     { name = "Ahum Maitra", email = "theahummaitra@gmail.com" }
 ]
 dependencies = [
@@ -19,4 +19,11 @@ dependencies = [
     "pytest>=9.0.1",
     "mypy>=1.18.2",
 ]
-license = "License.md"
+license = "GPL-3.0-only"
+
+[project.scripts]
+
+Itomori = "Itomori.main:main"
+
+[tool.setuptools.package-data]
+Itomori = ["*.tcss", "*.txt", "*.md", "*.json"]

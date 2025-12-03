@@ -20,13 +20,57 @@ https://raw.githubusercontent.com/TheAhumMaitra/Itomori/main/assests/videos/Show
 
 # 🛠️ Installation
 
+## Windows
+
+**Installation with `uv`:**
+
+```uv tool install git+https://github.com/TheAhumMaitra/Itomori.git```
+
+***Done , now launch with just ```Itomori`` command***
+
+**Manual installation:**
+
+**Pre-requirements : git, uv, python 3.14 installed**
+***Note : It can work on older Python version but it is not recommended.**
+
+***Steps :***
+
+1. Clone this repo
+
+```git clone https://github.com/TheAhumMaitra/Itomori.git```
+
+2. Go to the Itomori folder
+
+It's saved where you cloned this repo
+
+``` cd Itomori ```
+
+3. Install it
+
+``` pip install . ```
+
+**Done!**
+
+## Mac OS
+
+**Installation with `uv`:**
+
+```uv tool install git+https://github.com/TheAhumMaitra/Itomori.git```
+
+***Done , now launch with just ```Itomori`` command***
+
 ## Linux
 
-**Pre-requirements: ** curl
+**Installation with `uv`:**
 
-```
-curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash
-```
+```uv tool install git+https://github.com/TheAhumMaitra/Itomori.git```
+
+***Done , now launch with just ```Itomori`` command***
+
+
+**Installation with `curl`:**
+
+```curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash``` **Note : It's not recommended**
 
 # 💬 Contribute
 

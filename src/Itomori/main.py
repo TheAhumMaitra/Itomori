@@ -14,50 +14,46 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 
-
 """
 Main python file to render Itomori
 """
 
-# import all necessary libraries or modules
-from tinydb import TinyDB
+import argparse  # for cli commands
+import subprocess  # for update with cli
 
+# to genarate new joke every 5 sec after
+# import other modules or libraries
+import uuid  # to generate id
+from typing import Any, Tuple
+
+import arrow  # to get current time and date
+
+# import pyjoke to tell user a joke
+import pyjokes
 from loguru import logger  # for save and write the logs
+from textual import on  # to interact with user
 
 # Textual necessary imports
 from textual.app import App, ComposeResult
 
-# import necessary textual widgets
-from textual.widgets import Header, Footer, Input, Label
-
 # import containers for textual app
 from textual.containers import Container, ScrollableContainer
 
+# import necessary textual widgets
+from textual.widgets import Footer, Header, Input, Label
 
-# import pyjoke to tell user a joke
-import pyjokes
+# import all necessary libraries or modules
+from tinydb import TinyDB
 
-# to genarate new joke every 5 sec after
-import threading
-
-# import other modules or libraries
-import uuid  # to generate id
-
-from typing import Any, List, Tuple
-import arrow  # to get current time and date
-from textual import on  # to interact with user
-
+from Itomori.components.AboutScreen import AboutScreen
+from Itomori.components.AddNoteInputBox import UserNoteInputBox
+from Itomori.components.InfoWhereSaved import WhereSavedWarn
+from Itomori.components.LicenseText import license_text
+from Itomori.components.LogoText import LogoRender
+from Itomori.components.ViewRawNotes import RawNotes
 
 # All components
 from Itomori.components.WelcomeTextRender import WelcomeText
-from Itomori.components.AddNoteInputBox import UserNoteInputBox
-from Itomori.components.InfoWhereSaved import WhereSavedWarn
-from Itomori.components.LogoText import LogoRender
-from Itomori.components.AboutScreen import AboutScreen
-from Itomori.components.ViewRawNotes import RawNotes
-
-from tinydb.storages import JSONStorage
-from tinydb.middlewares import CachingMiddleware
 
 
 # main app class
@@ -163,13 +159,84 @@ class Itomori(App):
         # update every 10 seconds automatically
         self.set_interval(10, self.update_joke)
 
-#main function for cli integration
+
+# main function for cli integration
 def main():
-    '''
+    """
     This main function help us to run cli command to run Itomori (like : `Itomori`)
-    '''
-    app : Itomori = Itomori()
+    """
+
+    parser = argparse.ArgumentParser(
+        prog="Itomori", description="A beautiful quick note taking tui app"
+    )
+
+    parser.add_argument(
+        "--version",
+        action="store_true",
+        help="Shows the current Itomori version you are using",
+    )
+
+    parser.add_argument(
+        "--update", action="store_true", help="To update Itomori automatically"
+    )
+
+    parser.add_argument("--about", action="store_true", help="Show Itomori's info")
+
+    parser.add_argument("--license", action="store_true", help="Show Itomori's license")
+    parser.add_argument(
+        "--fullLicense",
+        action="store_true",
+        help="Show full LIcense text, conditions, policies, license details!",
+    )
+    parser.add_argument("--uninstall", action="store_true", help="Uninstall Itomori")
+    args = parser.parse_args()
+
+    if args.version:
+        subprocess.run("clear")
+        print("You are using Itomori v1.0.0")
+        return
+
+    if args.update:
+        subprocess.run("clear")
+        print("Updating Itomori....")
+        subprocess.run(
+            [
+                "uv",
+                "tool",
+                "install",
+                "git+https://github.com/TheAhumMaitra/Itomori.git",
+            ]
+        )
+        return "\n\nUpdated Itomori successfully"
+
+    if args.about:
+        subprocess.run("clear")
+        print(
+            "Hello, This is Itomori, v1.0.0! A quick note taking TUI for you! License : GNU General Public License V3"
+        )
+
+    if args.license:
+        subprocess.run("clear")
+        print("""Itomori  Copyright (C) 2025  Ahum Maitra
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `--fullLicense'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `--fullLicense' for details.""")
+
+    if args.fullLicense:
+        subprocess.run("clear")
+        print(f"{license_text}")
+        return
+
+    if args.uninstall:
+        subprocess.run("clear")
+        print(
+            "\n\nUninstalling Itomori, Sorry to say goodbye! I tried to make for you! I tried very hard to make Itomori for you, contact me for any feedback or if you faced an issue! Go to the GIthub repo and issues section and create a new issue! I hope it's help ! Press Ctrl + C to cancel!\n\n"
+        )
+        subprocess.run(["uv", "tool", "uninstall", "Itomori"])
+
+    app: Itomori = Itomori()
     app.run()
+
 
 # if the file run directly
 if __name__ == "__main__":

@@ -19,7 +19,7 @@ from textual.screen import ModalScreen
 from textual.app import ComposeResult
 from textual.widgets import Label
 from textual.containers import Container
-from components.LicenseScreen import LicenseScreen
+from Itomori.components.LicenseScreen import LicenseScreen
 
 """
 This file is a component, which is just helps to render the version screen.

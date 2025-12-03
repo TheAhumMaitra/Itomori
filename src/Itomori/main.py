@@ -192,12 +192,12 @@ def main():
     args = parser.parse_args()
 
     if args.version:
-        subprocess.run("clear")
+        subprocess.run(["clear"])
         print("You are using Itomori v1.0.0")
         return
 
     if args.update:
-        subprocess.run("clear")
+        subprocess.run(["clear"])
         print("Updating Itomori....")
         subprocess.run(
             [
@@ -210,29 +210,34 @@ def main():
         return "\n\nUpdated Itomori successfully"
 
     if args.about:
-        subprocess.run("clear")
+        subprocess.run(["clear"])
         print(
             "Hello, This is Itomori, v1.0.0! A quick note taking TUI for you! License : GNU General Public License V3"
         )
+        return
 
     if args.license:
-        subprocess.run("clear")
-        print("""Itomori  Copyright (C) 2025  Ahum Maitra
+        subprocess.run(["clear"])
+
+        return"""Itomori  Copyright (C) 2025  Ahum Maitra
     This program comes with ABSOLUTELY NO WARRANTY; for details type `--fullLicense'.
     This is free software, and you are welcome to redistribute it
-    under certain conditions; type `--fullLicense' for details.""")
+    under certain conditions; type `--fullLicense' for details."""
 
     if args.fullLicense:
-        subprocess.run("clear")
+        subprocess.run(["clear"])
+
         print(f"{license_text}")
         return
 
     if args.uninstall:
-        subprocess.run("clear")
+        subprocess.run(["clear"])
+
         print(
             "\n\nUninstalling Itomori, Sorry to say goodbye! I tried to make for you! I tried very hard to make Itomori for you, contact me for any feedback or if you faced an issue! Go to the GIthub repo and issues section and create a new issue! I hope it's help ! Press Ctrl + C to cancel!\n\n"
         )
         subprocess.run(["uv", "tool", "uninstall", "Itomori"])
+        return "I'm sad but Itomori is uninstalled from your computer or device"
 
     app: Itomori = Itomori()
     app.run()

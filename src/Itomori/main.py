@@ -163,6 +163,13 @@ class Itomori(App):
         # update every 10 seconds automatically
         self.set_interval(10, self.update_joke)
 
+#main function for cli integration
+def main():
+    '''
+    This main function help us to run cli command to run Itomori (like : `Itomori`)
+    '''
+    app : Itomori = Itomori()
+    app.run()
 
 # if the file run directly
 if __name__ == "__main__":

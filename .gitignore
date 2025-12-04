@@ -27,3 +27,7 @@ src/.logs
 .vscode
 .idea
 .zed
+
+.logs
+
+src/Itomori/.logs

@@ -26,8 +26,6 @@ from Itomori.components.LicenseText import license_text
 class LicenseScreen(ModalScreen):
     BINDINGS: list[tuple(str)] = [("escape", "pop_screen")]
 
-    # css link
-    CSS_PATH: str = "../Itomori/style.tcss"
 
     def compose(self) -> ComposeResult:
         with ScrollableContainer(id="LicenseScreen"):

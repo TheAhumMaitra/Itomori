@@ -30,9 +30,16 @@ uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
 
 ***Done , now launch with just ```Itomori`` command***
 
+**Installation using PIP:**
+```
+pip install itomori
+```
+***Done , now launch with just ```Itomori`` command***
+
+
 **Manual installation:**
 
-**Pre-requirements : git, uv, python 3.14 installed**
+**Pre-requirements : `python` installed**
 ***Note : It can work on older Python version but it is not recommended.**
 
 ***Steps :***
@@ -57,7 +64,8 @@ cd Itomori
 pip install .
  ```
 
-**Done!**
+***Done , now launch with just ```Itomori`` command***
+
 
 ## Mac OS
 
@@ -69,6 +77,45 @@ uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
 
 ***Done , now launch with just ``Itomori`` command***
 
+
+
+**Installation using PIP:**
+```
+pip install itomori
+```
+***Done , now launch with just ```Itomori`` command***
+
+
+**Manual installation:**
+
+**Pre-requirements : `python` installed**
+***Note : It can work on older Python version but it is not recommended.**
+
+***Steps :***
+
+1. Clone this repo
+
+```
+git clone https://github.com/TheAhumMaitra/Itomori.git
+```
+
+2. Go to the Itomori folder
+
+It's saved where you cloned this repo
+
+```
+cd Itomori
+```
+
+3. Install it
+
+```
+pip install .
+ ```
+
+***Done , now launch with just ```Itomori`` command***
+
+
 ## Linux
 
 **Installation with `uv`:**
@@ -76,6 +123,44 @@ uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
 ```
 uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
 ```
+
+***Done , now launch with just ```Itomori`` command***
+
+
+
+**Installation using PIP:**
+```
+pip install itomori
+```
+***Done , now launch with just ```Itomori`` command***
+
+
+**Manual installation:**
+
+**Pre-requirements : `python` installed**
+***Note : It can work on older Python version but it is not recommended.**
+
+***Steps :***
+
+1. Clone this repo
+
+```
+git clone https://github.com/TheAhumMaitra/Itomori.git
+```
+
+2. Go to the Itomori folder
+
+It's saved where you cloned this repo
+
+```
+cd Itomori
+```
+
+3. Install it
+
+```
+pip install .
+ ```
 
 ***Done , now launch with just ```Itomori`` command***
 

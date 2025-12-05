@@ -2,9 +2,7 @@
 
 Itomori is a clean, minimal, and fully keyboard-powered notes app built with Python. It focuses on simplicity, speed, and staying out of your way—so you can just write. It's designed for taking quick notes , that's why it is great for quick notes.
 
-# Preview
-
-https://raw.githubusercontent.com/TheAhumMaitra/Itomori/main/assests/videos/Show_off.mp4
+**Note: This is the `dev` branch of Itomori. This might be unstable.**
 
 # ✨ Features
 

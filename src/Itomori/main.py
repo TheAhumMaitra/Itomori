@@ -70,7 +70,7 @@ class Itomori(App):
     CSS_PATH: str = "./style.tcss"
 
     # keyboard bindings for user
-    BINDINGS: list[Tuple(str)] = [
+    BINDINGS = [
         ("^q", "quit", "Quit the app"),
         ("v", "show_ver", "Show About info"),
         ("n", "show_row_notes", "View All Notes"),

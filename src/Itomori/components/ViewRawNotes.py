@@ -38,7 +38,7 @@ class RawNotes(ModalScreen[None]):
 
     logger.add(".logs/app.log", rotation="10 MB")
     # keyboard bindings for the modal screen
-    BINDINGS: list(tuple(str)) = [("escape", "pop_screen")]
+    BINDINGS = [("escape", "pop_screen")]
 
     def compose(self) -> ComposeResult:
         """

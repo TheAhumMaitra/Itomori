@@ -180,7 +180,7 @@ Feel free to contribute ideas, improvements, or bug fixes. PRs are always welcom
 
 [`License`](License.md)
 
-### ⚠ Logs warning : This app is designed to take logs , so you need to delete them mannualy, Go to `home / Itomori` and delete the `.logs/app.log`'s content, not the file.
+**⚠ Logs warning :** _This app is deaigned to take logs, please clear the `.logs/app.log` , well it might me depends on your OS. We are developing a comamnd to vlear logs, but it is not ready yet!_
 
 # Thanks
 

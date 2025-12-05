@@ -22,9 +22,8 @@ from textual.widgets import Label
 
 from Itomori.components.LicenseText import license_text
 
-
 class LicenseScreen(ModalScreen):
-    BINDINGS: list[tuple(str)] = [("escape", "pop_screen")]
+    BINDINGS = [("escape", "pop_screen")]
 
 
     def compose(self) -> ComposeResult:

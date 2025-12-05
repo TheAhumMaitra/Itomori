@@ -34,7 +34,7 @@ class AboutScreen(ModalScreen[None]):
     """
 
     # keyboard bindings for this modal screen
-    BINDINGS: list[tuple(str)] = [("escape", "pop_screen"), ("l", "show_license", "Show License info")]
+    BINDINGS = [("escape", "pop_screen"), ("l", "show_license", "Show License info")]
 
     # css link
     CSS_PATH: str = "../style.tcss"

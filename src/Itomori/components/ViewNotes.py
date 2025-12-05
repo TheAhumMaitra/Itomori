@@ -31,7 +31,7 @@ from rich.table import Table
 from rich import box
 
 
-class RawNotes(ModalScreen[None]):
+class ViewNotes(ModalScreen[None]):
     """
     This widget helps users to see all raw json file notes.
     """

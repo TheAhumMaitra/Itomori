@@ -15,44 +15,63 @@
 
 
 """
-Main python file to render Itomori
+Main python file to run Itomori
 """
 
-import argparse  # for cli commands
+# for cli interface
+import argparse #to declare main interface
 import subprocess  # for update with cli
 
-# to genarate new joke every 5 sec after
-# import other modules or libraries
-import uuid  # to generate id
-from typing import Any, Tuple
+# for generate ids
+import uuid
 
-import arrow  # to get current time and date
+# import all necessary type annotations
+from typing import Any
 
-# import pyjoke to tell user a joke
+# for saving the notes with time
+import arrow
+
+# to tell user a joke
 import pyjokes
-from loguru import logger  # for save and write the logs
-from textual import on  # to interact with user
+
+# to do the logging
+from loguru import logger
+
+# for interact with user
+from textual import on
 
 # Textual necessary imports
 from textual.app import App, ComposeResult
+from textual.widgets import Footer, Header, Input, Label
 
 # import containers for textual app
 from textual.containers import Container, ScrollableContainer
 
-# import necessary textual widgets
-from textual.widgets import Footer, Header, Input, Label
 
-# import all necessary libraries or modules
+# for saving and accessing notes (simple database)
 from tinydb import TinyDB
 
-from Itomori.components.AboutScreen import AboutScreen
-from Itomori.components.AddNoteInputBox import UserNoteInputBox
-from Itomori.components.InfoWhereSaved import WhereSavedWarn
-from Itomori.components.LicenseText import license_text
-from Itomori.components.LogoText import LogoRender
-from Itomori.components.ViewRawNotes import RawNotes
+# import all necessary components for Itomori
 
-# All components
+# About Screen
+from Itomori.components.AboutScreen import AboutScreen
+
+#Note input box
+from Itomori.components.AddNoteInputBox import UserNoteInputBox
+
+# Where 'notes.json' saved Warning
+from Itomori.components.InfoWhereSaved import WhereSavedWarn
+
+#for pushing the license texts in License screen
+from Itomori.components.LicenseText import license_text
+
+# For rendering the ASCII logo of Itomori
+from Itomori.components.LogoText import LogoRender
+
+#Showing user notes components
+from Itomori.components.ViewNotes import ViewNotes
+
+#Welcome text
 from Itomori.components.WelcomeTextRender import WelcomeText
 
 
@@ -81,6 +100,7 @@ class Itomori(App):
         """
         This is the main method. This method is to compose Itomori
         """
+        #Loading the joke
         self.joke_label: Label = Label("Loading joke...", id="joke")
 
         yield Header(show_clock=True)  # show the Header with a little clock
@@ -100,15 +120,18 @@ class Itomori(App):
         """
         This function helps us to receive user's typed input and store them in a json file (notes.json). This json file can keep append every time.
         """
-
+        #main database
         db: TinyDB = TinyDB("notes.json")
+
+        #get user's note
         user_typed_input: Any = self.query_one("#NoteInputBox")  # get user input
 
+        #get the Note and strip it
         self.user_note: str = (
             user_typed_input.value.strip()
         )  # get the real value form 'user_typed_input'
 
-        note: str = self.user_note  # make the note available all over the class
+        note: str = self.user_note  # make the note available for all scopes
 
         # get a beautiful date and time to store in the json file
         date_and_time: str = arrow.now().format("dddd, DD MMMM YYYY - hh:mm A (ZZZ)")
@@ -119,6 +142,7 @@ class Itomori(App):
         # insert the note (with id, time and date)
         db.insert({"ID": id, "Note": note, "Time": date_and_time})
 
+    #show version if the `v` key pressed
     def action_show_ver(self) -> None:
         """
         This method help us, if user pressed 'v' key in their keyboard then it help us to show the Version component (screen).
@@ -127,24 +151,29 @@ class Itomori(App):
 
         self.push_screen(AboutScreen())  # push the modal screen
 
+    # View note class for show the notes
     class ViewNote:
-        Container(RawNotes())
+        Container(ViewNotes())
 
+    #if user requested to close the app
     def action_quit(self) -> None:
-        logger.info("User requested to exit the app!")
-        self.app.exit()
+        logger.info("User requested to exit the app!") #add a log
+        self.app.exit() #exit the app
 
+    #if user requested to show notes
     def action_show_row_notes(self) -> None:
         """
         This method help us, if user pressed 'n' key in their keyboard then it help us to show the all saved notes, raw json file.
         """
         logger.info("User requested for exit the Raw notes screen")
-        self.push_screen(RawNotes())  # push the screen
+        self.push_screen(ViewNotes())  # push the screen
 
+    #update the joke after 5 seconds
     def update_joke(self) -> None:
         joke: str = pyjokes.get_joke()
         self.joke_label.update(f"[b grey]{joke}[/b grey]")
 
+    #ready these when the app loaded
     def on_mount(self) -> None:
         """
         This method helps us to when the app run successfully it quickly run these settings or tweaks
@@ -153,6 +182,7 @@ class Itomori(App):
         # Set the Itomori's default theme
         self.theme = "catppuccin-mocha"
 
+    #ready before app loaded
     def on_ready(self) -> None:
         self.update_joke()
 
@@ -219,7 +249,7 @@ def main():
     if args.license:
         subprocess.run(["clear"])
 
-        return"""Itomori  Copyright (C) 2025  Ahum Maitra
+        return """Itomori  Copyright (C) 2025  Ahum Maitra
     This program comes with ABSOLUTELY NO WARRANTY; for details type `--fullLicense'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `--fullLicense' for details."""
@@ -236,9 +266,19 @@ def main():
         print(
             "\n\nUninstalling Itomori, Sorry to say goodbye! I tried to make for you! I tried very hard to make Itomori for you, contact me for any feedback or if you faced an issue! Go to the GIthub repo and issues section and create a new issue! I hope it's help ! Press Ctrl + C to cancel!\n\n"
         )
-        subprocess.run(["uv", "tool", "uninstall", "Itomori"])
-        return "I'm sad but Itomori is uninstalled from your computer or device"
 
+        sure : str = input("Are you sure , you want to uninstall Itomori? (Y/n)")
+        try :
+            if sure == "Y" or sure == "y":
+                subprocess.run(["uv", "tool", "uninstall", "Itomori"])
+                return "I'm sad but Itomori is uninstalled from your computer or device"
+
+            elif sure =="N" or sure == "n":
+                return "Itomori uninstallation canceled!"
+        except ValueError as error:
+            return "Invalid value, please input correct option. Itomori uninstallation canceled!"
+
+    logger.info("User requested to run the Itomori")
     app: Itomori = Itomori()
     app.run()
 
@@ -248,10 +288,9 @@ if __name__ == "__main__":
     app: Itomori = Itomori()  # app is 'Itomori' class [main class]
     try:
         app.run()  # try to run the app
-        logger.info("User requested to run the Itomori")
 
     # if any critical error stops us to run the app or anything wrong
     except Exception as Error:
         raise Exception(
-            f"Sorry! Something went wrong, it is too critical. Raw error - {Error}"  # give user a friendly messege and also give user user what goes wrong
+            f"Sorry! Something went wrong, it is too critical. Raw error - {Error}"  # give user a friendly message and also give user user what goes wrong
         )

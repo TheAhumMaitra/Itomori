@@ -2,12 +2,12 @@
 
 _Thanks for decided to contribute to Itomori_ 
 
-**Note : All pull requests are required to make pull requests to `dev` branch**
-
 ## Did you find a bug?
 
 If the bug is crashing the app, please feel free to make a quick **pull request.** 
 If the bug is not crashing the app but maybe causing probelms, you can create a **issue** or make a **pull request** .
+
+Please test your changes locally by installing. 
 
 ## Did you find any spelling or grammer mistakes?
 

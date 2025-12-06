@@ -2,6 +2,8 @@
 
 _Thanks for decided to contribute to Itomori_ 
 
+**Note : All pull requests are required to make pull requests to `dev` branch**
+
 ## Did you find a bug?
 
 If the bug is crashing the app, please feel free to make a quick **pull request.** 

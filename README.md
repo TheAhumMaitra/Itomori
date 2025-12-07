@@ -72,7 +72,6 @@ pip install .
 ```
 curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash
 ```
-**Note : It's not recommended**
 
 # 💬 Contribute
 

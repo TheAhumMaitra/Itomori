@@ -16,6 +16,7 @@
 #!/usr/bin/env bash
 set -e
 
+clear
 # ───────────────────────────────────────────
 # ASCII LOGO
 # ───────────────────────────────────────────
@@ -32,7 +33,11 @@ EOF
 
 echo "$logo"
 echo ""
-echo "Installation script by Ahum Maitra"
+echo "Installation script by Ahum Maitra. This Linux installation script helps you to install Itomori and it's also creates a desktop shortcut for you!"
+echo ""
+echo ""
+echo ""
+echo ""
 
 # ───────────────────────────────────────────
 # VARIABLES
@@ -45,7 +50,7 @@ DESKTOP_FILE="$HOME/.local/share/applications/itomori.desktop"
 # CHECK PYTHON
 # ───────────────────────────────────────────
 if ! command -v python3 >/dev/null 2>&1; then
-    echo "Python3 not found. Installing..."
+    echo "Python3 not Icon=$INSTALL_DIR/icon.pngfound. Installing..."
 
     if command -v apt >/dev/null 2>&1; then
         sudo apt update && sudo apt install -y python3 python3-venv python3-pip
@@ -56,12 +61,12 @@ if ! command -v python3 >/dev/null 2>&1; then
     elif command -v emerge >/dev/null 2>&1; then
         sudo emerge --ask dev-lang/python
     else
-        echo "❌ Unsupported distro. Install Python manually."
+        echo "Unsupported distro, please install Python manually."
         exit 1
     fi
 fi
 
-echo "✔ Python found or installed."
+echo "Python found....."
 
 # ───────────────────────────────────────────
 # CLONE REPO
@@ -75,19 +80,12 @@ else
 fi
 
 # ───────────────────────────────────────────
-# SETUP PYTHON VENV
+# Installing Itomori
 # ───────────────────────────────────────────
-echo "Setting up virtual environment..."
-python3 -m venv "$INSTALL_DIR/venv"
-source "$INSTALL_DIR/venv/bin/activate"
+echo "Installing Itomori!"
+cd "$INSTALL_DIR"
+uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
 
-echo "Installing Python dependencies..."
-pip install --upgrade pip
-pip install -r "$INSTALL_DIR/requirements.txt" || true
-
-deactivate
-
-echo "✔ Virtual environment ready."
 
 # ───────────────────────────────────────────
 # CREATE DESKTOP LAUNCHER
@@ -99,9 +97,8 @@ mkdir -p "$HOME/.local/share/applications"
 cat <<EOF > "$DESKTOP_FILE"
 [Desktop Entry]
 Name=Itomori
-Comment=Itomori TUI Application
-Exec=$INSTALL_DIR/venv/bin/python $INSTALL_DIR/itomori.py
-Icon=$INSTALL_DIR/icon.png
+Comment=Itomori
+Exec=Itomori
 Terminal=true
 Type=Application
 Categories=Utility;
@@ -109,8 +106,8 @@ EOF
 
 chmod +x "$DESKTOP_FILE"
 
-echo "✔ Desktop entry created: $DESKTOP_FILE"
-echo "✔ You can now search 'Itomori' in your applications menu."
+echo "Desktop app entry created: $DESKTOP_FILE"
+echo "You can now search Itomori' in your applications menu."
 
 # ───────────────────────────────────────────
 echo ""

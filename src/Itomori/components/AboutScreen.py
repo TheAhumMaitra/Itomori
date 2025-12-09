@@ -9,6 +9,7 @@ from textual.app import ComposeResult
 from textual.widgets import Label
 from textual.containers import Container
 from Itomori.components.LicenseScreen import LicenseScreen
+from Itomori import __version__
 
 """
 This file is a component, which is just helps to render the version screen.
@@ -37,7 +38,7 @@ class AboutScreen(ModalScreen[None]):
             Main container for the Version Modal Screen
             """
             # All labels
-            yield Label("[b]Itomori v1.0.0[/b]")  # Itmori current version
+            yield Label(f"[b]Itomori v{__version__}[/b]")  # Itmori current version
             yield Label(
                 "[italic bold]Author : Ahum Maitra[italic bold]"
             )  # My name as author

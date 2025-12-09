@@ -43,7 +43,7 @@ from Itomori.components.ViewRawNotes import RawNotes
 
 # All components
 from Itomori.components.WelcomeTextRender import WelcomeText
-
+from Itomori import __version__
 
 # main app class
 class Itomori(App):
@@ -182,7 +182,7 @@ def main():
 
     if args.version:
         subprocess.run(["clear"])
-        print("You are using Itomori v1.0.0")
+        print(f"You are using Itomori {__version__}")
         return
 
     if args.update:

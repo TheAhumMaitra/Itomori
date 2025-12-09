@@ -8,3 +8,5 @@ This library helps to access all, components for creating Itomori.
 
 All core components/ widgets of Itomori.
 """
+
+__version__ =  "1.1.0"

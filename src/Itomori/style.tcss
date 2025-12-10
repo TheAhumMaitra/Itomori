@@ -26,7 +26,7 @@
 #LogoText{
     width: 100%;
     color: purple;
-    height: 30%;
+    height: 40%;
     align: center middle;
     margin: 2;
     text-align: center;

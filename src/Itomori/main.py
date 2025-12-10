@@ -1,17 +1,6 @@
-#   Copyright (C) 2025  Ahum Maitra
-
-#     This program is free software: you can redistribute it and/or modify
-#     it under the terms of the GNU General Public License as published by
-#     the Free Software Foundation, either version 3 of the License, or
-#     (at your option) any later version.
-
-#     This program is distributed in the hope that it will be useful,
-#     but WITHOUT ANY WARRANTY; without even the implied warranty of
-#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#     GNU General Public License for more details.
-
-#     You should have received a copy of the GNU General Public License
-#     along with this program.  If not, see <https://www.gnu.org/licenses/>
+# SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+#
+# SPDX-License-Identifier: 	GPL-3.0-or-later
 
 
 """
@@ -53,6 +42,7 @@ from tinydb import TinyDB
 
 # import all necessary components for Itomori
 
+<<<<<<< HEAD
 # About Screen
 from Itomori.components.AboutScreen import AboutScreen
 
@@ -72,8 +62,14 @@ from Itomori.components.LogoText import LogoRender
 from Itomori.components.ViewNotes import ViewNotes
 
 #Welcome text
-from Itomori.components.WelcomeTextRender import WelcomeText
+=======
+#import my 'Your Name' textual theme
+from Itomori.themes.YourNameTheme import your_name
 
+# All components
+>>>>>>> 66a56de1db2cc0677a5c1c97c3b4c48d0e296b7a
+from Itomori.components.WelcomeTextRender import WelcomeText
+from Itomori import __version__
 
 # main app class
 class Itomori(App):
@@ -182,7 +178,13 @@ class Itomori(App):
         # Set the Itomori's default theme
         self.theme = "catppuccin-mocha"
 
+<<<<<<< HEAD
     #ready before app loaded
+=======
+        # Register the `Your Name` theme
+        self.register_theme(your_name)
+
+>>>>>>> 66a56de1db2cc0677a5c1c97c3b4c48d0e296b7a
     def on_ready(self) -> None:
         self.update_joke()
 
@@ -223,7 +225,7 @@ def main():
 
     if args.version:
         subprocess.run(["clear"])
-        print("You are using Itomori v1.0.0")
+        print(f"You are using Itomori {__version__}")
         return
 
     if args.update:

@@ -1,8 +1,20 @@
+<!--
+ SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+
+ SPDX-License-Identifier: 	GPL-3.0-or-later
+-->
+
 # Itomori
 
 Itomori is a clean, minimal, and fully keyboard-powered notes app built with Python. It focuses on simplicity, speed, and staying out of your way—so you can just write. It's designed for taking quick notes , that's why it is great for quick notes.
 
+<<<<<<< HEAD
 **Note: This is the `dev` branch of Itomori. This might be unstable.**
+=======
+# Preview
+
+![preview of Itomori](https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/assests/videos/Screenshot_2025-12-05-09-59-54-20_3aea4af51f236e4932235fdada7d1643.jpg)
+>>>>>>> 66a56de1db2cc0677a5c1c97c3b4c48d0e296b7a
 
 # ✨ Features
 
@@ -18,7 +30,7 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 # 🛠️ Installation
 
-## Windows
+## Windows, Linux, Mac OS
 
 **Installation with `uv`:**
 
@@ -65,110 +77,11 @@ pip install .
 ***Done , now launch with just ```Itomori`` command***
 
 
-## Mac OS
-
-**Installation with `uv`:**
-
-```
-uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
-```
-
-***Done , now launch with just ``Itomori`` command***
-
-
-
-**Installation using PIP:**
-```
-pip install itomori
-```
-***Done , now launch with just ```Itomori`` command***
-
-
-**Manual installation:**
-
-**Pre-requirements : `python` installed**
-***Note : It can work on older Python version but it is not recommended.**
-
-***Steps :***
-
-1. Clone this repo
-
-```
-git clone https://github.com/TheAhumMaitra/Itomori.git
-```
-
-2. Go to the Itomori folder
-
-It's saved where you cloned this repo
-
-```
-cd Itomori
-```
-
-3. Install it
-
-```
-pip install .
- ```
-
-***Done , now launch with just ```Itomori`` command***
-
-
-## Linux
-
-**Installation with `uv`:**
-
-```
-uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
-```
-
-***Done , now launch with just ```Itomori`` command***
-
-
-
-**Installation using PIP:**
-```
-pip install itomori
-```
-***Done , now launch with just ```Itomori`` command***
-
-
-**Manual installation:**
-
-**Pre-requirements : `python` installed**
-***Note : It can work on older Python version but it is not recommended.**
-
-***Steps :***
-
-1. Clone this repo
-
-```
-git clone https://github.com/TheAhumMaitra/Itomori.git
-```
-
-2. Go to the Itomori folder
-
-It's saved where you cloned this repo
-
-```
-cd Itomori
-```
-
-3. Install it
-
-```
-pip install .
- ```
-
-***Done , now launch with just ```Itomori`` command***
-
-
-**Installation with `curl`:**
+**Installation with `curl`: (Only for Linux)**
 
 ```
 curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash
 ```
-**Note : It's not recommended**
 
 # 💬 Contribute
 
@@ -178,7 +91,7 @@ Feel free to contribute ideas, improvements, or bug fixes. PRs are always welcom
 
 [`License`](License.md)
 
-### ⚠ Logs warning : This app is designed to take logs , so you need to delete them mannualy, Go to `home / Itomori` and delete the `.logs/app.log`'s content, not the file.
+**⚠ Logs warning :** _This app is deaigned to take logs, please clear the `.logs/app.log` , well it might me depends on your OS. We are developing a comamnd to vlear logs, but it is not ready yet!_
 
 # Thanks
 

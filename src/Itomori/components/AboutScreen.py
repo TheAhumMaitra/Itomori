@@ -1,17 +1,6 @@
-#   Copyright (C) 2025  Ahum Maitra
-
-#     This program is free software: you can redistribute it and/or modify
-#     it under the terms of the GNU General Public License as published by
-#     the Free Software Foundation, either version 3 of the License, or
-#     (at your option) any later version.
-
-#     This program is distributed in the hope that it will be useful,
-#     but WITHOUT ANY WARRANTY; without even the implied warranty of
-#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#     GNU General Public License for more details.
-
-#     You should have received a copy of the GNU General Public License
-#     along with this program.  If not, see <https://www.gnu.org/licenses/>
+# SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+#
+# SPDX-License-Identifier: 	GPL-3.0-or-later
 
 
 # all necessary Textual widgets, screens, containers
@@ -20,6 +9,7 @@ from textual.app import ComposeResult
 from textual.widgets import Label
 from textual.containers import Container
 from Itomori.components.LicenseScreen import LicenseScreen
+from Itomori import __version__
 
 """
 This file is a component, which is just helps to render the version screen.
@@ -48,7 +38,7 @@ class AboutScreen(ModalScreen[None]):
             Main container for the Version Modal Screen
             """
             # All labels
-            yield Label("[b]Itomori v1.0.0[/b]")  # Itmori current version
+            yield Label(f"[b]Itomori v{__version__}[/b]")  # Itmori current version
             yield Label(
                 "[italic bold]Author : Ahum Maitra[italic bold]"
             )  # My name as author

@@ -41,6 +41,9 @@ from Itomori.components.LicenseText import license_text
 from Itomori.components.LogoText import LogoRender
 from Itomori.components.ViewRawNotes import RawNotes
 
+#import my 'Your Name' textual theme
+from Itomori.themes.YourNameTheme import your_name
+
 # All components
 from Itomori.components.WelcomeTextRender import WelcomeText
 from Itomori import __version__
@@ -141,6 +144,9 @@ class Itomori(App):
         logger.info("Applied quick changes and theme changed")
         # Set the Itomori's default theme
         self.theme = "catppuccin-mocha"
+
+        # Register the `Your Name` theme
+        self.register_theme(your_name)
 
     def on_ready(self) -> None:
         self.update_joke()

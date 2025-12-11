@@ -1,3 +1,8 @@
+//  SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+
+//  SPDX-License-Identifier: 	GPL-3.0-or-later
+
+
 // This file helps you to install Itomori by just running this C file. It is just for fun!
 
 #include <stdio.h>

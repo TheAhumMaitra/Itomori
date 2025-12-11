@@ -1,23 +1,46 @@
 "use client";
 
 import { Kbd } from "@/components/ui/kbd";
+import { CopyButton } from "./ui/shadcn-io/copy-button";
 
 export default function Installation() {
-  const install_command = `curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash`;
+  let uv_url = "uv tool install git+https://github.com/TheAhumMaitra/Itomori.git";
 
-  const copy = () => {
-    navigator.clipboard.writeText(install_command);
-  };
+  let pip_url = "pip install Itomori";
 
   return (
-    <div className="h-[50vh] flex flex-col justify-center gap-3 items-center mt-4 border-accent border-8">
+    <>
+    <div className="p-3 border-9 mt-3 w-full h-full">
+      <h1 className="underline font-extrabold text-center! text-3xl">Installation</h1>
+
+    <div className="h-[50vh] flex flex-col justify-center gap-3 items-center mt-4 border-accent border-8 rounded-3xl">
       <h2 className="text-2xl font-bold underline">
-        Install using one command in Linux:
+        Install using uv in Windows or Linux or Mac OS or others:
       </h2>
 
-      <Kbd className="text-1xl font-bold cursor-pointer!" onClick={copy}>
-        {install_command}
-      </Kbd>
+      <div className="text-1xl p-3 font-bold cursor-pointer! flex gap-3">
+        <span className="p-3 rounded-3xl bg-card flex gap-3 text-center justify-center items-center">
+        <h3>{uv_url}</h3>
+        <CopyButton content={uv_url} variant="default" size="md" />
+        </span>
+
+      </div>
     </div>
+
+    <div className="h-[50vh] rounded-3xl flex flex-col justify-center gap-3 items-center mt-4 border-accent border-8">
+      <h2 className="text-2xl font-bold underline">
+        Install using pip in Windows or Linux or Mac OS or others:
+      </h2>
+
+      <div className="text-1xl p-3 font-bold cursor-pointer! flex gap-3">
+        <span className="p-3 rounded-3xl bg-card flex gap-3 text-center justify-center items-center">
+        <h3>{pip_url}</h3>
+        <CopyButton content={pip_url} variant="default" size="md" />
+        </span>
+
+      </div>
+    </div>
+    </div>
+    </>
   );
 }

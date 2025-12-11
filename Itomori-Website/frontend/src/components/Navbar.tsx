@@ -11,10 +11,10 @@ export default function Navbar() {
           <Link
             className="hover:text-destructive"
             href={
-              "https://github.com/TheAhumMaitra/Itomori/releases/tag/v1.0.0"
+              "https://github.com/TheAhumMaitra/Itomori/releases/tag/v1.1.0"
             }
           >
-            Itomori v1.0.0 just released!
+            Itomori v1.1.0 just released!
           </Link>
         </AlertTitle>
       </Alert>
@@ -28,7 +28,7 @@ export default function Navbar() {
         </Link>
         <ul>
           <li className="mr-4 hover:text-purple-700 hover:font-extrabold">
-            <Link href={"https://itomori-documentation.vercel.app/"}>Docs</Link>
+            <Link href={"https://itomoridocs.vercel.app/"}>Docs</Link>
           </li>
         </ul>
         <ModeToggle />

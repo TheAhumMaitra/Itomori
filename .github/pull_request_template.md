@@ -14,6 +14,9 @@ Please put a `x` in the box
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
+- [ ] Enhancements on exsistsing source code
+- [ ] Documentation update
+- [ ] Other (please write your changes in short here)
 
 # How Has This Been Tested?
 
@@ -35,7 +38,7 @@ Please put a `x` in the box
 - [ ] I read the code of conduct and contributing guidelines
 
 
-# Screenshots [if avilable]
+# Screenshots [if available]
 
 
 

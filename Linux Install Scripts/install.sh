@@ -20,6 +20,7 @@ clear
 # ───────────────────────────────────────────
 # ASCII LOGO
 # ───────────────────────────────────────────
+echo "Important note : Please do not run this script on fish shell. Press CTR+C to exit it"
 logo=$(cat << 'EOF'
 .___  __                              .__
 |   |/  |_  ____   _____   ___________|__|

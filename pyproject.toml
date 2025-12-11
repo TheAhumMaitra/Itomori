@@ -39,6 +39,7 @@ Itomori = "Itomori.main:main"
 
 [project.optional-dependencies]
 dev = [
+    "maturin>=1.10.2",
     "mkdocs-material>=9.7.0",
 ]
 

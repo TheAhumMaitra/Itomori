@@ -1,0 +1,52 @@
+site_name: Itomori Docs
+repo_url: https://github.com/TheAhumMaitra/Itomori
+repo_name: TheAhumMaitra/Itomori
+theme:
+  name: material
+  # Palette toggle for automatic mode
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      accent: black
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      accent: black
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  icon:
+    repo: fontawesome/brands/git-alt
+
+  features:
+    - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+
+nav:
+  - Home: index.md
+  - Get Started:
+      - Create your first note: get_started/create_your_first_note.md
+      - View All Saved Notes: get_started/view_all_notes.md
+      - View Itomori version: get_started/view_current_version.md
+      - Congratulations!: get_started/congratulations.md
+
+      - Itomori's cool CLI: get_started/cool_cli.md
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: Copyright &copy; 2025 Ahum Maitra. This website's source code is licensed under GNU General Public License V3 . The website's content is licensed under Creative Commons Attribution-ShareAlike 4.0 International.

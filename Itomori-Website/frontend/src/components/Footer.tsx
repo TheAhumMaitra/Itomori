@@ -9,8 +9,12 @@ export default function Footer() {
     <>
       <div className="h-full w-full backdrop-blur-sm sticky bottom-0 mt-3 flex flex-col justify-center items-center font-bold p-3">
         <h1>
-          This website&apos;s source code is open source is licensed under GNU GENERAL PUBLIC LICENSE - VERSION 3
-          License and content is licensed under
+          This website&apos;s source code is open source and it&apos;s licensed under  <Link
+            className="hover:italic hover:text-destructive ml-1"
+            href={"https://www.gnu.org/licenses/gpl-3.0.en.html"}
+          >
+           GPL-3.0
+          </Link> and content is licensed under
           <Link
             className="hover:italic hover:text-destructive ml-1"
             href={"https://creativecommons.org/licenses/by-sa/4.0/"}

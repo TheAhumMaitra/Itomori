@@ -4,6 +4,7 @@
 
 
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
 
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { ModeToggle } from "./theme-toggle";
@@ -24,19 +25,25 @@ export default function Navbar() {
         </AlertTitle>
       </Alert>
 
-      <nav className="flex mt-4 p-3 justify-between items-center h-full sticky top-0 border-4 border-border w-full backdrop-blur-sm rounded-2xl text-foreground">
+      <nav className="flex mt-4 justify-between p-2.5 items-center h-full sticky top-0 border-4 border-border w-full backdrop-blur-sm rounded-2xl text-foreground">
         <Link
-          className="text-2xl font-bold w-full h-full text-center"
+          className="text-2xl font-bold h-full text-center"
           href={"https://github.com/TheAhumMaitra/Itomori"}
         >
           Itomori
         </Link>
         <ul>
-          <li className="mr-4 hover:text-purple-700 hover:font-extrabold">
+          <li className=" font-medium text-xl bg-card p-3 rounded-2xl hover:text-purple-700 hover:font-extrabold">
             <Link href={"https://itomoridocs.vercel.app/"}>Docs</Link>
           </li>
         </ul>
+        <div className="flex gap-3">
+          <Link href={"https://github.com/TheAhumMaitra/Itomori"} className="cursor-pointer">
+
+        <FaGithub size={34}/>
+          </Link>
         <ModeToggle />
+        </div>
       </nav>
     </>
   );

@@ -76,6 +76,8 @@ pip install .
 
 **Installation with `curl`: (Only for Linux)**
 
+***Note : This script does not support Fish shell***
+
 ```
 curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash
 ```

@@ -13,8 +13,8 @@ export default function Installation() {
 
   return (
     <>
-    <div className="p-3 border-9 mt-3 w-full h-full">
-      <h1 className="underline font-extrabold text-center! text-3xl">Installation</h1>
+    <div className="p-3 border-4 rounded-2xl mt-3 border-primary w-full h-full">
+      <h1 className="underline text-primary-foreground font-extrabold text-center! text-3xl">Installation</h1>
 
     <div className="h-[50vh] flex flex-col justify-center gap-3 items-center mt-4 border-accent border-8 rounded-3xl">
       <h2 className="text-2xl font-bold underline">

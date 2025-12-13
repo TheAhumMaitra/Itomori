@@ -8,6 +8,7 @@ import { FaGithub } from "react-icons/fa";
 
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { ModeToggle } from "./theme-toggle";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -27,13 +28,14 @@ export default function Navbar() {
 
       <nav className="flex mt-4 justify-between p-2.5 items-center h-full sticky top-0 border-4 border-border w-full backdrop-blur-sm rounded-2xl text-foreground">
         <Link
-          className="text-2xl font-bold h-full text-center"
+          className="text- font-bold h-full text-center"
           href={"https://github.com/TheAhumMaitra/Itomori"}
         >
-          Itomori
+          <Image className="bg-transparent m-3 scale-170 rounded-2xl" alt="Logo" src={"/logo.png"} width={100} height={120} />
+
         </Link>
         <ul>
-          <li className=" font-medium text-xl bg-card p-3 rounded-2xl hover:text-purple-700 hover:font-extrabold">
+          <li className=" font-medium text-xl bg-card p-3 rounded-2xl hover:text-primary hover:font-extrabold">
             <Link href={"https://itomoridocs.vercel.app/"}>Docs</Link>
           </li>
         </ul>

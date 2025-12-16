@@ -26,7 +26,7 @@ export default function Navbar() {
         </AlertTitle>
       </Alert>
 
-      <nav className="flex mt-4 justify-between p-2.5 items-center h-full sticky top-0 border-4 border-border w-full backdrop-blur-sm rounded-2xl text-foreground">
+      <nav className="flex mt-3 justify-between p-2.5 items-center h-full sticky top-[0.2rem] border-4 border-border w-full backdrop-blur-[1rem] rounded-2xl text-foreground bg-[#ffffff2c]">
         <Link
           className="text- font-bold h-full text-center"
           href={"https://github.com/TheAhumMaitra/Itomori"}

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Gifts from "@/components/Gifts";
+
+//Add Snow Fall effect to the whole website
 import Snowfall from "@/components/SnowFall";
-import Santa from "@/components/Santa";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

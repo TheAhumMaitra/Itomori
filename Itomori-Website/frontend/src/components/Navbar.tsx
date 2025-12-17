@@ -34,7 +34,7 @@ export default function Navbar() {
           <Image className="bg-transparent m-3 scale-170 rounded-2xl" alt="Logo" src={"/logo.png"} width={100} height={120} />
 
         </Link>
-        <ul>
+        <ul className="font-mono">
           <li className=" font-medium text-xl bg-card p-3 rounded-2xl hover:text-primary hover:font-extrabold">
             <Link href={"https://itomoridocs.vercel.app/"}>Docs</Link>
           </li>

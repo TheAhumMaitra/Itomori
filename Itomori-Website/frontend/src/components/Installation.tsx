@@ -14,10 +14,10 @@ export default function Installation() {
   return (
     <>
     <div className="p-3 border-4 rounded-2xl mt-3 border-primary w-full h-full">
-      <h1 className="underline text-primary-foreground font-extrabold text-center! text-3xl">Installation</h1>
+      <h1 className="underline text-primary-foreground font-extrabold text-center! text-3xl font-mono">Installation</h1>
 
     <div className="h-[50vh] flex flex-col justify-center gap-3 items-center mt-4 border-accent border-8 rounded-3xl">
-      <h2 className="text-2xl font-bold underline">
+      <h2 className="text-2xl font-bold underline font-mono!">
         Install using uv in Windows or Linux or Mac OS or others:
       </h2>
 
@@ -31,7 +31,7 @@ export default function Installation() {
     </div>
 
     <div className="h-[50vh] rounded-3xl flex flex-col justify-center gap-3 items-center mt-4 border-accent border-8">
-      <h2 className="text-2xl font-bold underline">
+      <h2 className="text-2xl font-bold underline font-mono!">
         Install using pip in Windows or Linux or Mac OS or others:
       </h2>
 

@@ -12,7 +12,6 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 https://github.com/user-attachments/assets/f90ba1e9-8df4-4adf-9014-ef3128682a2c
 
-
 # ✨ Features
 
 1. Minimal and distraction-free
@@ -29,27 +28,34 @@ https://github.com/user-attachments/assets/f90ba1e9-8df4-4adf-9014-ef3128682a2c
 
 ## Windows, Linux, Mac OS
 
-**Installation with `uv`:**
+**Installation or update with `uv`:**
 
 ```
-uv tool install git+https://github.com/TheAhumMaitra/Itomori.git
+uv tool install -U Itomori
 ```
 
-***Done , now launch with just ```Itomori`` command***
+_or_
+
+```
+uv tool install -U git+https://github.com/TheAhumMaitra/Itomori.git
+```
+
+**_Done , now launch with just ``Itomori` command_**
 
 **Installation using PIP:**
+
 ```
 pip install itomori
 ```
-***Done , now launch with just ```Itomori`` command***
 
+**_Done , now launch with just ``Itomori` command_**
 
 **Manual installation:**
 
 **Pre-requirements : `python` installed**
-***Note : It can work on older Python version but it is not recommended.**
+**\*Note : It can work on older Python version but it is not recommended.**
 
-***Steps :***
+**_Steps :_**
 
 1. Clone this repo
 
@@ -69,14 +75,13 @@ cd Itomori
 
 ```
 pip install .
- ```
+```
 
-***Done , now launch with just ```Itomori`` command***
-
+**_Done , now launch with just ``Itomori` command_**
 
 **Installation with `curl`: (Only for Linux)**
 
-***Note : This script does not support Fish shell***
+**_Note : This script does not support Fish shell_**
 
 ```
 curl -sSL "https://raw.githubusercontent.com/TheAhumMaitra/Itomori/refs/heads/main/Linux%20Install%20Scripts/install.sh" | bash

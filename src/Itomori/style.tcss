@@ -5,6 +5,25 @@
 
 */
 
+#notes_list{
+    width: 100%;
+    height: 45%;
+    border: solid $primary;
+    align: center middle;
+    text-align: center;
+    margin: 3;
+}
+
+#recent_notes_text{
+    width: 100%;
+    color: purple;
+    height: 3;
+    padding: 1 2;
+    margin: 2;
+    align: center middle;
+    text-align: center;
+}
+
 #WelText{
     width: 100%;
     color: yellow;

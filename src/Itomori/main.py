@@ -10,7 +10,7 @@ Main python file to render Itomori
 import argparse  # for cli commands
 import subprocess  # for update with cli
 
-# to genarate new joke every 5 sec after
+# to generate new joke every 5 sec after
 # import other modules or libraries
 import uuid  # to generate id
 from typing import Any, Tuple
@@ -29,7 +29,7 @@ from textual.app import App, ComposeResult
 from textual.containers import Container, ScrollableContainer
 
 # import necessary textual widgets
-from textual.widgets import Footer, Header, Input, Label
+from textual.widgets import Footer, Header, Input, Label, ListView
 
 # import all necessary libraries or modules
 from tinydb import TinyDB
@@ -40,6 +40,7 @@ from Itomori.components.InfoWhereSaved import WhereSavedWarn
 from Itomori.components.LicenseText import license_text
 from Itomori.components.LogoText import LogoRender
 from Itomori.components.ViewRawNotes import RawNotes
+from Itomori.components.RecentNotes import items, recent_notes_text
 
 #import my 'Your Name' textual theme
 from Itomori.themes.YourNameTheme import your_name
@@ -79,8 +80,10 @@ class Itomori(App):
 
         # scrollable container to show all components
         yield ScrollableContainer(
-            LogoRender, WelcomeText, WhereSavedWarn, UserNoteInputBox
+            LogoRender, WelcomeText, WhereSavedWarn, UserNoteInputBox, recent_notes_text,
+            ListView(*items, id="notes_list")
         )
+
 
         yield self.joke_label
 

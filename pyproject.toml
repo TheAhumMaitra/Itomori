@@ -23,6 +23,9 @@ dependencies = [
     "rich>=14.2.0",
     "pytest>=9.0.1",
     "mypy>=1.18.2",
+    "textual-autocomplete>=4.0.6",
+    "pip>=25.3",
+    "english-words>=2.0.2",
 ]
 
 license = "GPL-3.0-only"

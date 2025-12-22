@@ -14,7 +14,7 @@ Please put a `x` in the box
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] This change requires a documentation update
-- [ ] Enhancements on exsistsing source code
+- [ ] Enhancements on existing source code
 - [ ] Documentation update
 - [ ] Other (please write your changes in short here)
 
@@ -37,9 +37,7 @@ Please put a `x` in the box
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] I read the code of conduct and contributing guidelines
 
-
 # Screenshots [if available]
 
 
-
-Have a nice day!
+**Have a nice day! Merry Christmas**

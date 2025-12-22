@@ -40,4 +40,4 @@ Please put a `x` in the box
 # Screenshots [if available]
 
 
-**Have a nice day! Merry Christmas**
+**Have a nice day! Merry Christmas 🎄 🎅 !**

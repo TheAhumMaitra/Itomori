@@ -5,19 +5,18 @@
 
 # Necessary Textual components and widgets
 import time
-from textual.screen import ModalScreen
-from textual.app import ComposeResult
-from textual.widgets import Label
-from textual.containers import ScrollableContainer
-from tinydb import TinyDB
-from textual.widgets import Static
 
 # to write logs
 from loguru import logger
+from rich import box
 
 # To view the table
 from rich.table import Table
-from rich import box
+from textual.app import ComposeResult
+from textual.containers import ScrollableContainer
+from textual.screen import ModalScreen
+from textual.widgets import Label, Static
+from tinydb import TinyDB
 
 
 class RawNotes(ModalScreen[None]):
@@ -75,7 +74,7 @@ class RawNotes(ModalScreen[None]):
 
             # check notes are empty or not
             if (notes := len(Database)) == 0:
-                yield Label("[b blue]Nothing in here![/b blue]")
+                yield Label("[b blue]No notes found![/b blue]")
             else:
                 logger.info("User requested to view notes")
                 yield Static(all_notes)

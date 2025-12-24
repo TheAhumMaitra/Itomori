@@ -9,7 +9,7 @@ from textual.widgets import Label, Footer, Header
 from textual.containers import Container
 
 #import License modal screen component
-from itomori.components.LincenseScreen import LicenseScreen
+from itomori.pages.LincenseScreen import LicenseScreen
 
 # import current Itomori version
 from itomori import __version__

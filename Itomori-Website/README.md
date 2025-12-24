@@ -1,4 +1,4 @@
-# Itomori Website
+# Itomori's Website
 
 This the official open source website of [`Itomori`](https://github.com/TheAhumMaitra/Itomori). This website is built using Next JS, Shacdn UI, Tailwind CSS, Motion, React Icons.
 

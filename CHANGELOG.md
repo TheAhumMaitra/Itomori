@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
-
+- Add Changelog from (#58)
 - Settings menu from (#55)
 
 

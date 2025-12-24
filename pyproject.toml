@@ -38,7 +38,7 @@ Repository = "https://github.com/TheAhumMaitra/Itomori"
 
 [project.scripts]
 
-Itomori = "Itomori.main:main"
+Itomori = "itomori.main:main"
 
 [project.optional-dependencies]
 dev = [
@@ -46,5 +46,8 @@ dev = [
     "mkdocs-material>=9.7.0",
 ]
 
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.package-data]
-Itomori = ["*.tcss", "*.txt", "*.md", "*.json"]
+itomori = ["**/*.tcss", "*.txt", "*.md", "*.json"]

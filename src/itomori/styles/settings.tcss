@@ -1,0 +1,13 @@
+#logs_text{
+    margin: 1;
+}
+#log_status{
+    margin: 1;
+    color: lime;
+}
+#not{
+    color: yellow;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 1 0;
+}

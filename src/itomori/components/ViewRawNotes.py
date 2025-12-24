@@ -15,7 +15,7 @@ from rich.table import Table
 from textual.app import ComposeResult
 from textual.containers import ScrollableContainer
 from textual.screen import ModalScreen
-from textual.widgets import Label, Static
+from textual.widgets import Footer, Label, Static, Header
 from tinydb import TinyDB
 
 
@@ -26,13 +26,13 @@ class RawNotes(ModalScreen[None]):
 
     logger.add(".logs/app.log", rotation="10 MB")
     # keyboard bindings for the modal screen
-    BINDINGS = [("escape", "pop_screen")]
+    BINDINGS = [("escape", "pop_screen", "Exit Notes Screen")]
 
     def compose(self) -> ComposeResult:
         """
         Main method for this widget
         """
-
+        yield Header(show_clock=True)
         # read the json file
         with ScrollableContainer(id="ViewRawNotesScreen"):
             try:
@@ -69,7 +69,6 @@ class RawNotes(ModalScreen[None]):
                 )
 
             # all labels
-            yield Label("[b yellow]Press ESC to exit this screen[/b yellow]\n\n\n\n")
             yield Label("[b yellow underline]ALL NOTES : [/b yellow underline]\n\n\n\n")
 
             # check notes are empty or not
@@ -78,6 +77,8 @@ class RawNotes(ModalScreen[None]):
             else:
                 logger.info("User requested to view notes")
                 yield Static(all_notes)
+
+        yield Footer()
 
     def action_pop_screen(self):
         """

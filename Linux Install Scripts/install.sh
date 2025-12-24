@@ -19,7 +19,8 @@ set -e
 clear
 # ───────────────────────────────────────────
 # ASCII LOGO
-# ───────────────────────────────────────────
+# ─────────────────────────────────────────
+
 echo "Important note : Please do not run this script on fish shell. Press CTR+C to exit it"
 logo=$(cat << 'EOF'
 .___  __                              .__
@@ -28,7 +29,7 @@ logo=$(cat << 'EOF'
 |   ||  | (  <_> )  Y Y  (  <_> )  | \/  |
 |___||__|  \____/|__|_|  /\____/|__|  |__|
                        \/
-                Itomori
+    Itomori Installation script for Linux (Bash, zsh)
 EOF
 )
 
@@ -67,13 +68,13 @@ if ! command -v python3 >/dev/null 2>&1; then
     fi
 fi
 
-echo "Python found....."
+echo "Python found! Good luck!"
 
 # ───────────────────────────────────────────
 # CLONE REPO
 # ───────────────────────────────────────────
 if [ -d "$INSTALL_DIR" ]; then
-    echo "Directory already exists. Pulling latest changes..."
+    echo "Directory already exists. Pulling latest change!"
     git -C "$INSTALL_DIR" pull
 else
     echo "Cloning Itomori repository..."
@@ -112,4 +113,6 @@ echo "You can now search Itomori' in your applications menu."
 
 # ───────────────────────────────────────────
 echo ""
-echo "🎉 Installation complete!"
+echo "🎉 Installation complete! Have fun!"
+echo ""
+echo "Thanks for using Itomori ❤️!"

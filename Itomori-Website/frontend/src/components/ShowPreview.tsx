@@ -2,6 +2,8 @@
 
 //  SPDX-License-Identifier: 	GPL-3.0-or-later
 
+// This file shows a preview video of Itomori
+
 export default function ShowPreview() {
   return (
     <>
@@ -11,6 +13,7 @@ export default function ShowPreview() {
         </h1>
         <video width="900" height="400" controls autoPlay loop muted>
           <source src="/Show_off.mp4" type="video/mp4" />
+          {/* inform user is using a old browser  */}
           Sorry, I tried but your browser does not support the video tag. It's too old!
         </video>
       </div>

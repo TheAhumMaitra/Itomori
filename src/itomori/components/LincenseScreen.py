@@ -6,17 +6,19 @@
 from textual.app import ComposeResult
 from textual.containers import ScrollableContainer
 from textual.screen import ModalScreen
-from textual.widgets import Label
+from textual.widgets import Label, Footer
 
 from itomori.components.LicenseText import license_text
 
 class LicenseScreen(ModalScreen):
-    BINDINGS = [("escape", "pop_screen")]
+    BINDINGS = [("escape", "pop_screen", "Close License Screen")]
 
 
     def compose(self) -> ComposeResult:
         with ScrollableContainer(id="LicenseScreen"):
             yield Label(f"{license_text}")
+
+        yield Footer()
 
     def action_pop_screen(self) -> None:
         """

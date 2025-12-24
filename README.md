@@ -95,7 +95,7 @@ Feel free to contribute ideas, improvements, or bug fixes. PRs are always welcom
 
 [`License`](License.md)
 
-**⚠ Logs warning :** _This app is deaigned to take logs, please clear the `.logs/app.log` , well it might me depends on your OS. We are developing a comamnd to vlear logs, but it is not ready yet!_
+**⚠ Logs warning :** _This app is deigned to take logs, please clear the `.logs/app.log` , well it might me depends on your OS. We are developing a command to clear logs, but it is not ready yet!_
 
 # Thanks
 

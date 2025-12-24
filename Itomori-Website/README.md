@@ -7,4 +7,4 @@ Contributions are welcome! Please read the `contributing.md` file more infprmati
 
 # License
 
-`GNU GENERAL PUBLIC LICENSE VERSION 3`
+`GPL-3.0-or-later`

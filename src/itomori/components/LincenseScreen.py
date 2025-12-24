@@ -8,7 +8,7 @@ from textual.containers import ScrollableContainer
 from textual.screen import ModalScreen
 from textual.widgets import Label
 
-from Itomori.components.LicenseText import license_text
+from itomori.components.LicenseText import license_text
 
 class LicenseScreen(ModalScreen):
     BINDINGS = [("escape", "pop_screen")]

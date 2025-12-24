@@ -34,27 +34,28 @@ from textual.widgets import Footer, Header, Input, Label, ListView
 # import all necessary libraries or modules
 from tinydb import TinyDB
 
-from Itomori.components.AboutScreen import AboutScreen
-from Itomori.components.AddNoteInputBox import UserNoteInputBox
-from Itomori.components.InfoWhereSaved import WhereSavedWarn
-from Itomori.components.LicenseText import license_text
-from Itomori.components.LogoText import LogoRender
-from Itomori.components.ViewRawNotes import RawNotes
-from Itomori.components.RecentNotes import items, recent_notes_text
+from itomori.pages.AboutScreen import AboutScreen
+from itomori.components.AddNoteInputBox import UserNoteInputBox
+from itomori.components.InfoWhereSaved import WhereSavedWarn
+from itomori.components.LicenseText import license_text
+from itomori.components.LogoText import LogoRender
+from itomori.components.ViewRawNotes import RawNotes
+from itomori.components.RecentNotes import items, recent_notes_text
 
 #import my 'Your Name' textual theme
-from Itomori.themes.YourNameTheme import your_name
+from itomori.themes.YourNameTheme import your_name
 
 # All components
-from Itomori.components.WelcomeTextRender import WelcomeText
-from Itomori import __version__
+from itomori.components.WelcomeTextRender import WelcomeText
+from itomori import __version__
+from itomori.pages.Settings import Settings
 
 # main app class
 class Itomori(App):
     """
     This is the main class of our app. This is required to run Textual app.
 
-    :param app - inhertence from the Textual app class
+    :param app - inherence from the Textual app class
     """
 
     logger.add(".logs/app.log", rotation="10 MB")
@@ -67,6 +68,7 @@ class Itomori(App):
         ("^q", "quit", "Quit the app"),
         ("v", "show_ver", "Show About info"),
         ("n", "show_row_notes", "View All Notes"),
+        ("s", "render_settings", "Open Settings")
     ]
 
     # main method
@@ -113,6 +115,9 @@ class Itomori(App):
 
         # insert the note (with id, time and date)
         db.insert({"ID": id, "Note": note, "Time": date_and_time})
+
+    def action_render_settings(self) -> None:
+        self.push_screen(Settings())
 
     def action_show_ver(self) -> None:
         """

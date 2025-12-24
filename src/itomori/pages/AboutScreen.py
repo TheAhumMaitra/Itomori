@@ -6,10 +6,10 @@
 # all necessary Textual widgets, screens, containers
 from textual.screen import ModalScreen
 from textual.app import ComposeResult
-from textual.widgets import Label
+from textual.widgets import Label, Footer, Header
 from textual.containers import Container
-from Itomori.components.LicenseScreen import LicenseScreen
-from Itomori import __version__
+from itomori.components.LincenseScreen import LicenseScreen
+from itomori import __version__
 
 """
 This file is a component, which is just helps to render the version screen.
@@ -24,7 +24,7 @@ class AboutScreen(ModalScreen[None]):
     """
 
     # keyboard bindings for this modal screen
-    BINDINGS = [("escape", "pop_screen"), ("l", "show_license", "Show License info")]
+    BINDINGS = [("escape", "pop_screen", "Escape about screen"), ("l", "show_license", "Show License info")]
 
     # css link
     CSS_PATH: str = "../style.tcss"
@@ -33,6 +33,8 @@ class AboutScreen(ModalScreen[None]):
         """
         Main Textaul compose function to render the About Modal Screen
         """
+        yield Header(show_clock=True)
+
         with Container(id="AboutScreen"):
             """
             Main container for the Version Modal Screen
@@ -48,9 +50,8 @@ class AboutScreen(ModalScreen[None]):
                 "[yellow bold]Github link : [underline]https://github.com/TheAhumMaitra/Itomori[/underline][yellow bold]"
             )
 
-            # An info, how to exit this modal screen
-            yield Label("Press [b]ESC[/b] to exit this screen.")
             yield Label("[b underline green]Press `L` to view License info[/b underline green]")
+        yield Footer()
 
     def action_pop_screen(self) -> None:
         """

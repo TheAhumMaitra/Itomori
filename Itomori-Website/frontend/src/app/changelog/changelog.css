@@ -1,0 +1,35 @@
+/* global spacing except nav & footer */
+body *:not(nav):not(nav *):not(footer):not(footer *) {
+    margin-bottom: 1rem;
+}
+
+/* headings */
+body h1:not(nav h1):not(footer h1) {
+    color: yellow;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-decoration: underline;
+}
+
+body h2:not(nav h2):not(footer h2) {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: larger;
+    color: blueviolet;
+}
+
+body h3:not(nav h3):not(footer h3) {
+    font-style: italic;
+    color: cyan;
+}
+
+/* text */
+body p:not(nav p):not(footer p) {
+    font-size: large;
+    color: cadetblue;
+}
+
+/* list items */
+body li:not(nav li):not(footer li) {
+    color: blueviolet;
+}

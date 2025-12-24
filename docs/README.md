@@ -9,4 +9,4 @@ Contributions are welcome! Feel free to contribute! Read the `contributing.md` f
 
 # License
 
-`GNU General Public License - version 3`
+`GPL-3.0-or-later`

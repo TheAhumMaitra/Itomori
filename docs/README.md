@@ -1,4 +1,4 @@
-# Itomori official Documentation
+# Itomori's official Documentation
 
 This is the official documentation of Itomori.
 

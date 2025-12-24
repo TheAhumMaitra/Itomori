@@ -6,7 +6,7 @@
 from textual.app import ComposeResult
 from textual.containers import ScrollableContainer
 from textual.screen import ModalScreen
-from textual.widgets import Label, Footer
+from textual.widgets import Label, Footer, Header
 
 from itomori.components.LicenseText import license_text
 
@@ -15,6 +15,8 @@ class LicenseScreen(ModalScreen):
 
 
     def compose(self) -> ComposeResult:
+        yield Header(show_clock=True)
+        
         with ScrollableContainer(id="LicenseScreen"):
             yield Label(f"{license_text}")
 

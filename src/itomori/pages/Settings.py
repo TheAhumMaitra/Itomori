@@ -1,8 +1,13 @@
+# SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+#
+# SPDX-License-Identifier: 	GPL-3.0-or-later
+
 from textual.app import ComposeResult
 from textual.containers import ScrollableContainer, Container
 from textual.screen import ModalScreen
 from textual.widgets import Footer, Header, Label, Select
 from textual import on
+from loguru import logger
 
 class Settings(ModalScreen):
     BINDINGS = [("escape", "escape_screen", "Close Settings Screen")]
@@ -28,8 +33,10 @@ class Settings(ModalScreen):
         match option:
             case "Enable":
                self.query_one("#log_status", Label).update("Logs are enabled!")
+               logger.enable("itomori")
             case "Disable":
                 self.query_one("#log_status", Label).update("Logs are disabled!")
+                logger.disable("itomori")
 
 
     def action_escape_screen(self) -> None:

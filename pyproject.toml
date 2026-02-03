@@ -7,7 +7,7 @@ name = "Itomori"
 version = "1.1.0"
 description = "Blazingly fast, minimalistic quick Note taking TUI app. Easy to store, run, share."
 readme = "README.md"
-requires-python = ">=3.9,<3.15"
+requires-python = ">=3.10,<3.15"
 keywords = ["TUI app", "Note taker", "Textual app", "Quick note taking app"]
 
 classifiers = [

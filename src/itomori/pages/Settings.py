@@ -2,9 +2,6 @@
 #
 # SPDX-License-Identifier: 	GPL-3.0-or-later
 
-# for track toml files
-import tomllib
-
 # import all necessary textual subpackage
 from textual.app import ComposeResult
 from textual import on
@@ -60,10 +57,7 @@ class Settings(ModalScreen):
             #if user selected `Enabled`
             case "Enable":
                self.query_one("#log_status", Label).update("Logs are enabled!") #inform user about their preference
-a= ".././//"
-               with open("../../")
-               logger.enable("itomori") #enable logging for `itomori` package
-
+               
             # if user selected `Disabled`
             case "Disable":
                 self.query_one("#log_status", Label).update("Logs are disabled!") #inform user about their preference

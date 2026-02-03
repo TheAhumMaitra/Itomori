@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 - Add Changelog from (#58)
 - Settings menu from (#55)
-
+- Add new colorful badges and add many Python version support
 
 ## [1.1.1] - 2025-12-24
 

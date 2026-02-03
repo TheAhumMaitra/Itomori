@@ -6,6 +6,21 @@
 
 # Itomori
 
+
+<div align="center">
+
+![Itomori](https://img.shields.io/badge/Itomori-cba6f7?style=for-the-badge&labelColor=cba6f7&color=cba6f7)
+![Ahum's Project](https://img.shields.io/badge/An_Ahum's_Project-cba6f7?style=for-the-badge&labelColor=cba6f7&color=50fa7b) ![GitHub last commit](https://img.shields.io/github/last-commit/TheAhumMaitra/Itomori?style=for-the-badge&color=b4befe) ![GitHub repo size](https://img.shields.io/github/repo-size/TheAhumMaitra/Itomori?style=for-the-badge&color=cba6f7)
+
+<a href="https://pypi.org/project/Itomori/">
+  <img src="https://img.shields.io/pypi/pyversions/Itomori?style=for-the-badge&color=b4befe" />
+</a>
+<br />
+<br />
+    
+<br/>
+</div>
+
 Itomori is a clean, minimal, and fully keyboard-powered notes app built with Python. It focuses on simplicity, speed, and staying out of your way—so you can just write. It's designed for taking quick notes , that's why it is great for quick notes.
 
 # Preview of Itomori

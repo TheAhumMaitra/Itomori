@@ -43,7 +43,7 @@ Make Itomori query lowercase for Github README support (`Commit` 8ba926e)
 - Note input bar for adding notes, which also supports `enter` keybinding
 
 
-[unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD
+[unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.2...HEAD
 [1.1.1]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.0.0...v1.1.0
 [1.1.2]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...v1.1.2

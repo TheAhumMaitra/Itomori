@@ -17,6 +17,8 @@ from typing import Any, Tuple
 
 import arrow  # to get current time and date
 
+from pathlib import Path
+
 # import pyjoke to tell user a joke
 import pyjokes
 from loguru import logger  # for save and write the logs
@@ -183,6 +185,10 @@ def main():
         "--update", action="store_true", help="To update Itomori automatically"
     )
 
+    parser.add_argument(
+        "--clearlogs", action="store_true", help="Clear all logs of Itomori"
+    )
+
     parser.add_argument("--about", action="store_true", help="Show Itomori's info")
 
     parser.add_argument("--license", action="store_true", help="Show Itomori's license")
@@ -191,6 +197,7 @@ def main():
         action="store_true",
         help="Show full LIcense text, conditions, policies, license details!",
     )
+
     parser.add_argument("--uninstall", action="store_true", help="Uninstall Itomori")
     args = parser.parse_args()
 
@@ -198,6 +205,15 @@ def main():
         subprocess.run(["clear"])
         print(f"You are using Itomori {__version__}")
         return
+
+    if args.clearlogs:
+        print("Clearing the logs....")
+
+        logs = Path.home() / ".local/state/Itomori/log/app.log"
+
+        logs.write_text("")
+
+        return "Logs cleared successfully"
 
     if args.update:
         subprocess.run(["clear"])

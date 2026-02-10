@@ -58,7 +58,7 @@ class Itomori(App):
     :param app - inherence from the Textual app class
     """
 
-    logger.add(".logs/app.log", rotation="10 MB")
+    logger.add(".local/state/Itomori/log/app.log", rotation="10 MB")
 
     # css style path
     CSS_PATH: str = "./style.tcss"

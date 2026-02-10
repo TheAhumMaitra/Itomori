@@ -110,7 +110,7 @@ Feel free to contribute ideas, improvements, or bug fixes. PRs are always welcom
 
 [`License`](License.md)
 
-**⚠ Logs warning :** _This app takes logs and the logs stores in `.local/state/Itomori/log/app.log`_
+**⚠ Logs warning :** _This app takes logs and the logs stores in `.local/state/Itomori/log/app.log`. You can remove the logs with this command - `Itomori --clearlogs`_
 
 # Thanks
 

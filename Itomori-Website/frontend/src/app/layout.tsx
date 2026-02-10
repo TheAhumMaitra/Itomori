@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 //Add Snow Fall effect to the whole website
-import Snowfall from "@/components/SnowFall";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -44,7 +43,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <Snowfall />
           {children}
           <Footer />
         </ThemeProvider>

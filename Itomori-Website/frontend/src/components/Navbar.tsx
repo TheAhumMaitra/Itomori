@@ -25,10 +25,10 @@ export default function Navbar() {
           <Link
             className="hover:text-destructive"
             href={
-              "https://github.com/TheAhumMaitra/Itomori/releases/tag/v1.1.1"
+              "https://github.com/TheAhumMaitra/Itomori/releases/tag/v1.1.2"
             }
           >
-            Itomori v1.1.1 just released!
+            Itomori v1.1.2 just released!
           </Link>
         </AlertTitle>
       </Alert>

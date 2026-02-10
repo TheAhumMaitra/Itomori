@@ -17,7 +17,7 @@
 </a>
 <br />
 <br />
-    
+
 <br/>
 </div>
 
@@ -110,7 +110,7 @@ Feel free to contribute ideas, improvements, or bug fixes. PRs are always welcom
 
 [`License`](License.md)
 
-**⚠ Logs warning :** _This app is deigned to take logs, please clear the `.logs/app.log` , well it might me depends on your OS. We are developing a command to clear logs, but it is not ready yet!_
+**⚠ Logs warning :** _This app takes logs and the logs stores in `.local/state/Itomori/log/app.log`_
 
 # Thanks
 

@@ -125,6 +125,7 @@
 --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Catppuccin mocha theme  */
 .mocha {
   --radius: 0.625rem;
 

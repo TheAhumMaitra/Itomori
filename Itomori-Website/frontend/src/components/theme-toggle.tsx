@@ -37,6 +37,18 @@ export function ModeToggle() {
         <DropdownMenuItem onClick={() => setTheme("mocha")}>
           Catppuccin Mocha
         </DropdownMenuItem>
+         <DropdownMenuItem onClick={() => setTheme("latte")}>
+          Catppuccin Latte
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("macchiato")}>
+          Catppuccin Macchiato
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("frappe")}>
+          Catppuccin Frappe
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dracula")}>
+          Dracula
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

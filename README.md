@@ -25,7 +25,7 @@ Itomori is a clean, minimal, and fully keyboard-powered notes app built with Pyt
 
 # Preview of Itomori
 
-https://github.com/user-attachments/assets/f90ba1e9-8df4-4adf-9014-ef3128682a2c
+https://github.com/user-attachments/assets/119ae39c-c26c-4550-9ec9-5da78f433340
 
 # ✨ Features
 
@@ -110,7 +110,7 @@ Feel free to contribute ideas, improvements, or bug fixes. PRs are always welcom
 
 [`License`](License.md)
 
-**⚠ Logs warning :** _This app takes logs and the logs stores in `.local/state/Itomori/log/app.log`. You can remove the logs with this command - `Itomori --clearlogs`_
+**⚠ Logs warning :** _This app takes logs and the logs stores in `.local/state/Itomori/log/app.log`. You can remove the logs with this command - `Itomori --clearlogs`_ or you can visit the Settings page and press `c` to clear the logs
 
 # Thanks
 

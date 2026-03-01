@@ -7,10 +7,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
-Follow XDG standards for writing app logs (Commit `392309a`)
-Add Dracula and all Catppuccin themes (Commit `5398ab7`)
+- John Wick Quotes: Added an option in Settings to show John Wick quotes instead of jokes on startup, or disable startup text entirely.
+- Copy Note: Added a keyboard shortcut (`c`) in the "View All Notes" screen to copy a note's text to the clipboard.
+- Clear All Notes: Users can now clear all saved notes from the "Settings" screen or via the CLI with `--clearnotes`.
+- Edit Notes: Users can now edit existing notes by pressing `e` in the "View All Notes" screen.
+- Pin Notes: Support for pinning important notes to the top of the list with the `p` key.
+- Tagging/Categories: Automatic tag extraction (e.g., #work, #personal) from note text for better organization.
+- Export Notes: Export all notes to a Markdown file with the `x` key.
+- Expanded theme selection in Settings with 10+ new Textual themes (Nord, Dracula, Monokai, Tokyo Night, etc.)
+- Follow XDG standards for writing app logs (Commit `392309a`)
+- Add Dracula and all Catppuccin themes (Commit `5398ab7`)
 
-### Fixed
+dxd### Fixed
 Fix wrong CLI version number (#82)
 Make Itomori query lowercase for Github README support (`Commit` 8ba926e)
 

@@ -16,6 +16,7 @@ import uuid  # to generate id
 from typing import Any, Tuple
 
 import arrow  # to get current time and date
+import random
 
 from pathlib import Path
 
@@ -26,12 +27,11 @@ from textual import on  # to interact with user
 
 # Textual necessary imports
 from textual.app import App, ComposeResult
-
-# import containers for textual app
 from textual.containers import Container, ScrollableContainer
-
-# import necessary textual widgets
 from textual.widgets import Footer, Header, Input, Label, ListView
+from itomori.pages.ConfirmClearLogs import ConfirmClearLogs
+from itomori.pages.ConfirmClearNotes import ConfirmClearNotes
+from itomori.components.JohnWickQuotes import JOHN_WICK_QUOTES
 
 # import all necessary libraries or modules
 from tinydb import TinyDB
@@ -42,15 +42,22 @@ from itomori.components.InfoWhereSaved import WhereSavedWarn
 from itomori.components.LicenseText import license_text
 from itomori.components.LogoText import LogoRender
 from itomori.components.ViewRawNotes import RawNotes
-from itomori.components.RecentNotes import items, recent_notes_text
+from itomori.components.RecentNotes import get_recent_notes, recent_notes_text
 
 #import my 'Your Name' textual theme
 from itomori.themes.YourNameTheme import your_name
 
 # All components
 from itomori.components.WelcomeTextRender import WelcomeText
-from itomori import __version__
+from itomori import __version__, LOG_PATH, DB_PATH, load_settings
 from itomori.pages.Settings import Settings
+
+# Load settings, confirm logger
+settings = load_settings()
+if settings.get("logs", True):
+    logger.add(LOG_PATH, rotation="10 MB")
+else:
+    logger.disable("itomori")
 
 # main app class
 class Itomori(App):
@@ -60,10 +67,8 @@ class Itomori(App):
     :param app - inherence from the Textual app class
     """
 
-    logger.add(".local/state/Itomori/log/app.log", rotation="10 MB")
-
     # css style path
-    CSS_PATH: str = "./style.tcss"
+    CSS_PATH: str = "style.tcss"
 
     # keyboard bindings for user
     BINDINGS = [
@@ -85,7 +90,7 @@ class Itomori(App):
         # scrollable container to show all components
         yield ScrollableContainer(
             LogoRender, WelcomeText, WhereSavedWarn, UserNoteInputBox, recent_notes_text,
-            ListView(*items, id="notes_list")
+            ListView(*get_recent_notes(), id="notes_list")
         )
 
 
@@ -100,7 +105,7 @@ class Itomori(App):
         This function helps us to receive user's typed input and store them in a json file (notes.json). This json file can keep append every time.
         """
 
-        db: TinyDB = TinyDB("notes.json")
+        db: TinyDB = TinyDB(DB_PATH)
         user_typed_input: Any = self.query_one("#NoteInputBox")  # get user input
 
         self.user_note: str = (
@@ -116,7 +121,25 @@ class Itomori(App):
         id: str = str(uuid.uuid4())
 
         # insert the note (with id, time and date)
-        db.insert({"ID": id, "Note": note, "Time": date_and_time})
+        # extract tags (starting with #) from the note
+        tags = [word.lstrip("#") for word in self.user_note.split() if word.startswith("#")]
+        
+        db.insert({
+            "ID": id, 
+            "Note": note, 
+            "Time": date_and_time,
+            "Pinned": False,
+            "Tags": tags
+        })
+
+        # Clear input box
+        user_typed_input.value = ""
+
+        # Update recent notes list
+        notes_list = self.query_one("#notes_list", ListView)
+        notes_list.clear()
+        for item in get_recent_notes():
+            notes_list.append(item)
 
     def action_render_settings(self) -> None:
         self.push_screen(Settings())
@@ -144,19 +167,35 @@ class Itomori(App):
         self.push_screen(RawNotes())  # push the screen
 
     def update_joke(self) -> None:
-        joke: str = pyjokes.get_joke()
-        self.joke_label.update(f"[b grey]{joke}[/b grey]")
+        settings = load_settings()
+        startup_option = settings.get("startup_text", "jokes")
+        
+        if startup_option == "jokes":
+            joke: str = pyjokes.get_joke()
+            self.joke_label.update(f"[b grey]{joke}[/b grey]")
+            self.joke_label.display = True
+        elif startup_option == "quotes":
+            quote: str = random.choice(JOHN_WICK_QUOTES)
+            self.joke_label.update(f"[b grey]\"{quote}\" - John Wick[/b grey]")
+            self.joke_label.display = True
+        else:
+            self.joke_label.display = False
 
     def on_mount(self) -> None:
         """
         This method helps us to when the app run successfully it quickly run these settings or tweaks
         """
         logger.info("Applied quick changes and theme changed")
-        # Set the Itomori's default theme
-        self.theme = "catppuccin-mocha"
+
+        # Load theme from settings
+        settings = load_settings()
+        theme_name = settings.get("theme", "catppuccin-mocha")
 
         # Register the `Your Name` theme
         self.register_theme(your_name)
+
+        # Set the theme
+        self.theme = theme_name
 
     def on_ready(self) -> None:
         self.update_joke()
@@ -189,6 +228,10 @@ def main():
         "--clearlogs", action="store_true", help="Clear all logs of Itomori"
     )
 
+    parser.add_argument(
+        "--clearnotes", action="store_true", help="Clear all notes of Itomori"
+    )
+
     parser.add_argument("--about", action="store_true", help="Show Itomori's info")
 
     parser.add_argument("--license", action="store_true", help="Show Itomori's license")
@@ -208,12 +251,15 @@ def main():
 
     if args.clearlogs:
         print("Clearing the logs....")
+        LOG_PATH.write_text("")
+        print("Logs cleared successfully")
+        return
 
-        logs = Path.home() / ".local/state/Itomori/log/app.log"
-
-        logs.write_text("")
-
-        return "Logs cleared successfully"
+    if args.clearnotes:
+        print("Clearing the notes....")
+        DB_PATH.write_text("")
+        print("Notes cleared successfully")
+        return
 
     if args.update:
         subprocess.run(["clear"])
@@ -226,22 +272,24 @@ def main():
                 "git+https://github.com/TheAhumMaitra/Itomori.git",
             ]
         )
-        return "\n\nUpdated Itomori successfully"
+        print("Updated Itomori successfully")
+        return
 
     if args.about:
         subprocess.run(["clear"])
         print(
-            "Hello, This is Itomori, v1.0.0! A quick note taking TUI for you! License : GNU General Public License V3"
+            f"Hello, This is Itomori, v{__version__}! A quick note taking TUI for you! License : GNU General Public License V3"
         )
         return
 
     if args.license:
         subprocess.run(["clear"])
 
-        return"""Itomori  Copyright (C) 2025  Ahum Maitra
+        print("""Itomori  Copyright (C) 2025  Ahum Maitra
     This program comes with ABSOLUTELY NO WARRANTY; for details type `--fullLicense'.
     This is free software, and you are welcome to redistribute it
-    under certain conditions; type `--fullLicense' for details."""
+    under certain conditions; type `--fullLicense' for details.""")
+        return
 
     if args.fullLicense:
         subprocess.run(["clear"])
@@ -256,21 +304,26 @@ def main():
             "\n\nUninstalling Itomori, Sorry to say goodbye! I tried to make for you! I tried very hard to make Itomori for you, contact me for any feedback or if you faced an issue! Go to the GIthub repo and issues section and create a new issue! I hope it's help ! Press Ctrl + C to cancel!\n\n"
         )
         subprocess.run(["uv", "tool", "uninstall", "Itomori"])
-        return "I'm sad but Itomori is uninstalled from your computer or device"
+        print("I'm sad but Itomori is uninstalled from your computer or device")
+        return
 
     app: Itomori = Itomori()
+    logger.info("Starting Itomori app...")
     app.run()
+    logger.info("Itomori app exited normally.")
 
 
 # if the file run directly
 if __name__ == "__main__":
     app: Itomori = Itomori()  # app is 'Itomori' class [main class]
     try:
-        app.run()  # try to run the app
-        logger.info("User requested to run the Itomori")
+        logger.info("Starting Itomori app...")
+        app.run()  #run the app
+        logger.info("Itomori app exited normally.")
 
     # if any critical error stops us to run the app or anything wrong
     except Exception as Error:
+        logger.error(f"Critical error: {Error}")
         raise Exception(
             f"Sorry! Something went wrong, it is too critical. Raw error - {Error}"  # give user a friendly messege and also give user user what goes wrong
         )

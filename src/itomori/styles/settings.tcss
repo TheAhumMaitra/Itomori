@@ -16,5 +16,45 @@
     color: yellow;
     text-align: center;
     width: 100%;
-    margin: 0 0 1 0;
+    margin: 1 0;
+}
+
+#theme_text {
+    margin: 1;
+}
+
+#danger_text {
+    margin: 1 1 0 1;
+    color: red;
+    text-style: bold underline;
+}
+
+#theme_status {
+    margin: 1;
+    color: skyblue;
+}
+
+#startup_text_label {
+    margin: 1;
+}
+
+#startup_status {
+    margin: 1;
+    color: pink;
+}
+
+#clear_status {
+    margin: 0 1;
+    color: tomato;
+}
+
+#danger_container {
+    border: solid red;
+    margin: 2 1;
+    padding: 0 1 1 1;
+}
+
+#clear_logs_btn, #clear_notes_btn {
+    width: 100%;
+    margin-top: 1;
 }
